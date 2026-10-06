@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import transactionModel from '../models/transaction.model.js';
 import accountModel from '../models/account.model.js';
 import ledgerModel from '../models/ledger.model.js';
@@ -74,4 +75,62 @@ async function createTransaction(req, res) {
       message: 'One or both accounts are not active'
     });
   }
+
+  /**
+   * Derive sender Balance from Ledger
+   */
+
+  const balance = await fromUserAccount.getBalance();
+
+  if(balance < amount) {
+    return res.status(400).json({
+      message: `Insufficient balance in sender account ${fromUserAccount._id}. Current balance is ${balance}`
+    })  
+  }
+
+  /**
+   * Create Transaction
+   */
+
+  const session = await mongoose.startSession();
+  session.startSession();
+
+  const transaction = new transactionModel.create({
+    fromAccount,
+    toAccount,
+    amount,
+    idempotencyKey,
+    status: 'PENDING'
+  }, { session });
+
+  const debitLedgerEntry = new ledgerModel.create({
+    account: fromAccount,
+    amount: amount,
+    transaction: transaction._id,
+    type: 'DEBIT'
+  }, { session });
+  
+  const creditLedgerEntry = new ledgerModel.create({
+    account: toAccount,
+    amount: amount,
+    transaction: transaction._id,
+    type: 'CREDIT'
+  }, { session });
+
+  await session.commitTransaction();
+  session.endSession();
+
+  /**
+   * Send Transaction Email
+   */
+
+  await emailService.sendTransactionEmail(req,user.email, req.email.name, amount, toAccount);
+
+  return res.status(201).json({
+    message: 'Transaction created successfully',
+    transaction: transaction
+  });
+  
 }
+
+export default { createTransaction };
