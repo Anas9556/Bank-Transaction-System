@@ -94,7 +94,22 @@ CLIENT_ID=your_google_client_id
 CLIENT_SECRET=your_google_client_secret
 REFRESH_TOKEN=your_google_refresh_token
 EMAIL_USER=your_email@example.com
+SYSTEM_USER_NAME=System User
+SYSTEM_USER_EMAIL=system@example.com
+SYSTEM_USER_PASSWORD=replace_with_a_secure_password
 ```
+
+Set the system-user values to private credentials before provisioning. Do not
+use the system-user email or password for a regular account.
+
+5. Create the system user and its account:
+
+```bash
+npm run setup:system-user
+```
+
+This command is safe to rerun: it creates the system user and account only if
+they do not already exist. It does not reset an existing user's password.
 
 ## Running the App
 
@@ -110,7 +125,7 @@ Or run the server directly:
 npm start
 ```
 
-The API will run on the port defined in `.env` or default to `3000`.
+The API will run on the port defined in `.env` or default to `3123`.
 
 ## API Endpoints
 
@@ -126,6 +141,13 @@ The API will run on the port defined in `.env` or default to `3000`.
 ### Transactions
 
 - `POST /api/transactions` - Create a new transaction for an authenticated user
+- `POST /api/transactions/system/initial-funds` - Create an initial-funds
+  transaction using the provisioned system user's account
+
+Both transaction endpoints require a JSON `amount` greater than zero and a
+unique `idempotencyKey`. Regular transactions also require `fromAccount`; the
+sender account must belong to the authenticated user. Initial-funds requests
+require a system-user token and `toAccount`.
 
 ## Example Environment Setup
 
@@ -139,12 +161,17 @@ This project expects the following variables to be available:
 - `CLIENT_SECRET`
 - `REFRESH_TOKEN`
 - `EMAIL_USER`
+- `SYSTEM_USER_NAME`
+- `SYSTEM_USER_EMAIL`
+- `SYSTEM_USER_PASSWORD`
 
 ## Notes
 
 - Keep your real `.env` file local and do not commit it to Git.
 - This project is a backend-focused application and is intended for learning and extension.
-- The repository is suitable for further additions such as transfer validation, balance checks, ledger history, and admin features.
+- Transfers are recorded as a debit and credit in a MongoDB transaction. The
+  MongoDB deployment must support transactions (for example, a replica set or
+  MongoDB Atlas).
 
 ## License
 

@@ -20,18 +20,13 @@ const accountSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Currency is required for creating an account'],
     default: "INR"
-  },
-  systemUser: {
-    type: Boolean,
-    default: false,
-    index: true
-  },
+  }
 },{ timestamps: true })
 
 accountSchema.index({user:1,status:1});
 
-accountSchema.methods.getBalance = async function() {
-  const balanceData = await ledgerModel.aggregate([
+accountSchema.methods.getBalance = async function(session) {
+  const balanceQuery = ledgerModel.aggregate([
     { $match: { account: this._id } },
     { $group: {
       _id:null,
@@ -61,7 +56,11 @@ accountSchema.methods.getBalance = async function() {
         balance: { $subtract: ["$totalCredit", "$totalDebit"] }
       }
     }
-  ])
+  ]);
+  if (session) {
+    balanceQuery.session(session);
+  }
+  const balanceData = await balanceQuery;
 
   if(balanceData.length === 0) {
     return 0;
