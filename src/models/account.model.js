@@ -21,6 +21,11 @@ const accountSchema = new mongoose.Schema({
     required: [true, 'Currency is required for creating an account'],
     default: "INR"
   },
+  systemUser: {
+    type: Boolean,
+    default: false,
+    index: true
+  },
 },{ timestamps: true })
 
 accountSchema.index({user:1,status:1});
