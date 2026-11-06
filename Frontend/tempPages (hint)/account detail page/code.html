@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#003d30","on-background":"#dee1f9","tertiary":"#bec6dd","error-container":"#93000a","tertiary-fixed-dim":"#bec6dd","inverse-on-surface":"#2b3041","primary":"#b5c4ff","on-error":"#690005","on-tertiary":"#283042","on-secondary-fixed":"#002018","on-primary-container":"#00236d","surface-container-highest":"#2f3446","surface-bright":"#34394a","surface-container-low":"#161b2b","surface-tint":"#b5c4ff","error":"#ffb4ab","on-tertiary-container":"#222a3b","secondary-container":"#00b290","primary-fixed-dim":"#b5c4ff","surface-variant":"#2f3446","on-surface-variant":"#c3c5d7","on-primary-fixed-variant":"#003cad","surface-container-lowest":"#080d1d","surface":"#0e1323","primary-container":"#648aff","on-primary-fixed":"#00164d","outline-variant":"#434654","primary-fixed":"#dce1ff","tertiary-container":"#8990a6","on-tertiary-fixed":"#131b2c","inverse-primary":"#1a53d6","on-primary":"#00297b","tertiary-fixed":"#dbe2fa","secondary-fixed-dim":"#4fddb8","surface-container":"#1a1f30","on-secondary":"#00382b","on-tertiary-fixed-variant":"#3f475a","inverse-surface":"#dee1f9","secondary":"#4fddb8","on-surface":"#dee1f9","secondary-fixed":"#70fad3","outline":"#8d90a0","on-error-container":"#ffdad6","background":"#0e1323","on-secondary-fixed-variant":"#005140","surface-container-high":"#25293a","surface-dim":"#0e1323"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-md":"1rem","gutter-sm":"1rem","space-lg":"1.5rem","margin-sm":"1.25rem","gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},fontFamily:{"headline-xl":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-lg":["Inter"],"label-md":["JetBrains Mono"],"label-xs":["JetBrains Mono"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"500"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between pb-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Ledgerly</span><span class="font-label-xs text-label-xs text-secondary mt-1">SYSTEM V2.4</span></div></div><span class="font-label-xs text-label-xs bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">CORE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="relative flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm font-medium shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)] transition-colors" data-path="accounts" href="#"><span class="font-body-md text-body-md font-medium text-on-primary-container">Accounts</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transactions" href="#">Transactions</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transfers" href="#">Transfers</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="categories" href="#">Categories</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports-and-analytics" href="#">Reports &amp; Analytics</a></nav><div class="pt-space-xs"><div class="px-space-sm pb-1"><span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">INTELLIGENCE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-insights" href="#">Financial Insights</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="anomaly-detection" href="#">Anomaly Detection</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ledger-integrity" href="#">Ledger Integrity</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-replay" href="#">Audit Replay</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="what-if-simulator" href="#">What-If Simulator</a></nav></div></div><div class="flex flex-col gap-space-sm px-space-md"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="help-and-support" href="#">Help &amp; Support</a></nav><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="font-label-sm text-label-sm text-primary font-bold">AR</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col min-w-0"><span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Anas R.</span><span class="font-label-xs text-label-xs text-outline truncate">anas@ledgerly.internal</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">unfold_more</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-label-xs text-label-xs text-outline uppercase">WORKSPACE</span><span class="font-label-xs text-label-xs text-outline">/</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Accounts</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-56" placeholder="Search account, identifier..." type="text"/></div><div class="flex items-center bg-surface-container-low rounded-lg p-0.5 gap-0.5"><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">7D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container-high text-primary font-medium">30D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">90D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">Custom</button></div><button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary"></span></button><button class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div><span class="material-symbols-outlined text-outline text-[16px] pr-1">arrow_drop_down</span></button></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification Element (Hidden by default) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none bg-surface-container-highest px-space-md py-2.5 rounded-lg shadow-xl flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface" id="toast-notify">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span id="toast-text">Action executed successfully</span>
+</div>
+<div class="px-space-lg py-space-md flex flex-col gap-space-md max-w-[1440px] mx-auto w-full">
+<!-- 1. Breadcrumb & Back Navigation -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-outline uppercase">WORKSPACE</span>
+<span class="text-outline">/</span>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Accounts</a>
+<span class="text-outline">/</span>
+<span class="text-primary font-medium">Primary Account</span>
+</div>
+<a class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back to Accounts</span>
+</a>
+</div>
+<!-- Account Header Panel -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<!-- Glow ambient backdrop -->
+<div class="absolute -top-16 -right-16 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Primary Account</h1>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant uppercase">Current Account</span>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+              ACTIVE NODE
+            </div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded font-label-xs text-label-xs text-on-surface-variant">
+<span>•••• 4092</span>
+<button class="hover:text-primary transition-colors flex items-center" onclick="copyHash('ACC-ID-8849-4092')" title="Copy Account Identifier">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Account overview, cryptographic balance verification, and real-time transaction activity.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-body-sm font-body-sm text-on-surface" onclick="triggerToast('Opening Account Configuration Drawer...')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Account</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-body-sm font-body-sm text-on-surface" onclick="triggerToast('Compiling Cryptographic Ledger Export (CSV/JSON-LD)...')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Export Ledger</span>
+</button>
+<div class="relative" id="more-actions-menu">
+<button class="p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface flex items-center" onclick="toggleDropdown()">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-highest rounded-lg shadow-xl py-1.5 z-30 flex flex-col font-body-sm text-body-sm" id="action-dropdown">
+<button class="flex items-center gap-2 px-3 py-2 text-left hover:bg-surface-container text-on-surface" onclick="triggerToast('Fetching cryptographic audit trail...'); toggleDropdown()">
+<span class="material-symbols-outlined text-[16px] text-primary">history_edu</span>
+<span>View Ledger Trail</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 text-left hover:bg-surface-container text-on-surface" onclick="triggerToast('Syncing consensus nodes with Raft Cluster...'); toggleDropdown()">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+<span>Re-sync Node</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="flex items-center gap-2 px-3 py-2 text-left hover:bg-surface-container text-error" onclick="triggerToast('Account state lock dialog initiated'); toggleDropdown()">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>Freeze Account</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Strip -->
+<div class="pt-space-sm border-t border-surface-container-high flex flex-wrap items-center justify-between gap-space-xs font-label-xs text-label-xs text-outline">
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-primary">memory</span>
+<span class="text-on-surface-variant font-medium">LEDGER NODE:</span> HDFC-CORE-01
+          </span>
+<span>•</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">lan</span>
+<span class="text-on-surface-variant font-medium">CONSENSUS:</span> RAFT-3NODES
+          </span>
+<span>•</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">shield_lock</span>
+<span class="text-on-surface-variant font-medium">SECURITY:</span> TLS 1.3 / FIPS-140-3 VERIFIED
+          </span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">update</span>
+<span>LAST RECONCILED: Today, 08:30 AM UTC</span>
+</div>
+</div>
+</div>
+<!-- 2. Account Balance Hero & Attributes Section (Top Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Hero Balance Card (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between gap-space-md relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">CURRENT SETTLED BALANCE</span>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container-high px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> REAL-TIME SYNC
+            </span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">₹84,200.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">INR</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+            Available for settlement: <span class="text-on-surface">100% (₹84,200.00)</span> • Daily Outflow Limit: <span class="text-on-surface">₹5,00,000.00</span>
+</p>
+</div>
+<!-- 4 Sub-metrics Bento Items inside Card -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs border-t border-surface-container-high">
+<div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline">TOTAL CREDITS</span>
+<span class="font-body-md text-body-md font-semibold text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> +₹1,12,450.00
+            </span>
+<span class="font-label-xs text-label-xs text-outline">14 Transactions</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline">TOTAL DEBITS</span>
+<span class="font-body-md text-body-md font-semibold text-error flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span> -₹28,250.00
+            </span>
+<span class="font-label-xs text-label-xs text-outline">18 Transactions</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline">NET INFLOW</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">
+              +₹84,200.00
+            </span>
+<span class="font-label-xs text-label-xs text-secondary font-medium">Healthy Variance</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline">ACTIVITY VOL</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">
+              32 Records
+            </span>
+<span class="font-label-xs text-label-xs text-outline">Current Cycle</span>
+</div>
+</div>
+</div>
+<!-- Account Info / Enclave Metadata Card (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Vault &amp; Ledger Attributes</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">ENCLAVE SECURE</span>
+</div>
+<div class="grid grid-cols-2 gap-y-2.5 gap-x-space-md py-1">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">ACCOUNT NAME</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Primary Operating Account</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">LEDGER SCHEME</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Double-Entry / Raft</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">VAULT / ENCLAVE ID</span>
+<span class="font-label-xs text-label-xs text-primary flex items-center gap-1 mt-0.5">
+<span>0x7F2A...E9C1</span>
+<button class="hover:text-on-surface transition-colors" onclick="copyHash('0x7F2AC983F11E9C1')" title="Copy Hash">
+<span class="material-symbols-outlined text-[12px]">content_copy</span>
+</button>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">DENOMINATION</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">INR (₹) Indian Rupee</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">CREATION DATE</span>
+<span class="font-body-sm text-body-sm text-on-surface">Jan 12, 2024 <span class="text-outline text-label-xs font-label-xs">#18,420</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">CRYPTOGRAPHIC HASH</span>
+<span class="font-label-xs text-label-xs text-secondary flex items-center gap-1 font-medium mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified_user</span> SHA-256 Validated
+            </span>
+</div>
+</div>
+<div class="bg-surface-container px-space-sm py-2 rounded-lg flex items-center justify-between text-label-xs font-label-xs">
+<span class="text-outline">NODE OPERATOR:</span>
+<span class="text-on-surface-variant font-medium">Ledgerly Core Financial Engine</span>
+</div>
+</div>
+</div>
+<!-- 3. Balance History Line Chart Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Balance History &amp; Settlement Dynamics</span>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded font-medium">+₹14,500.00 (+20.8%) in 30D</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Settled node balance trajectory with continuous cryptographic audit markers</span>
+</div>
+<!-- Time Range Selector -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 self-start sm:self-auto">
+<button class="px-2.5 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-colors" onclick="switchTimeRange(this)">7D</button>
+<button class="px-2.5 py-1 rounded font-label-xs text-label-xs bg-surface-container-high text-primary font-medium" onclick="switchTimeRange(this)">30D</button>
+<button class="px-2.5 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-colors" onclick="switchTimeRange(this)">90D</button>
+<button class="px-2.5 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-colors" onclick="switchTimeRange(this)">Custom</button>
+</div>
+</div>
+<!-- High-fidelity SVG Chart Visualization -->
+<div class="w-full relative bg-surface-container-lowest/60 rounded-lg p-space-md overflow-hidden">
+<div class="relative w-full h-64">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 900 240">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4fddb8" stop-opacity="0.25"></stop>
+<stop offset="60%" stop-color="#648aff" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#080d1d" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="chartStroke" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#648aff"></stop>
+<stop offset="65%" stop-color="#4fddb8"></stop>
+<stop offset="100%" stop-color="#70fad3"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal hairline gridlines & Y-Axis Labels -->
+<g class="text-outline text-[10px] font-label-xs" fill="currentColor">
+<!-- Line 90k -->
+<line stroke="#25293a" stroke-dasharray="3 3" stroke-width="1" x1="45" x2="890" y1="20" y2="20"></line>
+<text x="5" y="24">₹90k</text>
+<!-- Line 80k -->
+<line stroke="#25293a" stroke-dasharray="3 3" stroke-width="1" x1="45" x2="890" y1="75" y2="75"></line>
+<text x="5" y="79">₹80k</text>
+<!-- Line 70k -->
+<line stroke="#25293a" stroke-dasharray="3 3" stroke-width="1" x1="45" x2="890" y1="130" y2="130"></line>
+<text x="5" y="134">₹70k</text>
+<!-- Line 60k -->
+<line stroke="#25293a" stroke-dasharray="3 3" stroke-width="1" x1="45" x2="890" y1="185" y2="185"></line>
+<text x="5" y="189">₹60k</text>
+</g>
+<!-- Chart Area Fill -->
+<path d="M 60 148 
+                     C 130 144, 180 155, 230 152 
+                     C 280 149, 320 120, 380 115 
+                     C 430 110, 480 135, 530 125 
+                     C 580 115, 620 65, 680 62 
+                     C 730 60, 770 66, 810 52 
+                     C 840 45, 860 48, 880 44 
+                     L 880 210 L 60 210 Z" fill="url(#chartGradient)"></path>
+<!-- Chart Stroke Line -->
+<path d="M 60 148 
+                     C 130 144, 180 155, 230 152 
+                     C 280 149, 320 120, 380 115 
+                     C 430 110, 480 135, 530 125 
+                     C 580 115, 620 65, 680 62 
+                     C 730 60, 770 66, 810 52 
+                     C 840 45, 860 48, 880 44" fill="none" stroke="url(#chartStroke)" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Dynamic Guide Line for Active Hover Point (Oct 21) -->
+<line opacity="0.7" stroke="#4fddb8" stroke-dasharray="2 2" stroke-width="1" x1="680" x2="680" y1="20" y2="200"></line>
+<!-- Data Dots on Nodes -->
+<circle cx="230" cy="152" fill="#648aff" r="3"></circle>
+<circle cx="380" cy="115" fill="#648aff" r="3"></circle>
+<circle cx="530" cy="125" fill="#4fddb8" r="3"></circle>
+<!-- Active Selected Reconciled Node (Oct 21) -->
+<circle class="animate-pulse" cx="680" cy="62" fill="#4fddb8" r="5"></circle>
+<circle cx="680" cy="62" fill="#080d1d" r="2"></circle>
+<circle cx="810" cy="52" fill="#70fad3" r="3"></circle>
+<circle cx="880" cy="44" fill="#70fad3" r="3.5"></circle>
+<!-- X-Axis Labels -->
+<g class="text-outline text-[10px] font-label-xs" fill="currentColor">
+<text x="55" y="224">Oct 01</text>
+<text x="210" y="224">Oct 07</text>
+<text x="360" y="224">Oct 14</text>
+<text x="510" y="224">Oct 18</text>
+<text fill="#4fddb8" font-weight="600" x="660" y="224">Oct 21 (Settled)</text>
+<text x="790" y="224">Oct 25</text>
+<text x="855" y="224">Oct 28</text>
+</g>
+</svg>
+<!-- Interactive Tooltip Overlay Positioned at Oct 21 -->
+<div class="absolute top-2 left-[62%] sm:left-[70%] transform -translate-x-1/2 bg-surface-container-high px-3 py-1.5 rounded-lg shadow-xl border border-surface-container-highest pointer-events-none flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Reconciled Balance: ₹84,200.00</span>
+</div>
+<div class="font-label-xs text-label-xs text-outline flex items-center justify-between gap-space-sm">
+<span>Oct 21, 2025</span>
+<span>Block #9421</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Account Transactions History Section -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container-high">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Account Transactions</h2>
+<span class="font-body-sm text-body-sm text-outline">Real-time ledger events anchored to this operating node</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors font-body-sm text-body-sm text-on-surface" onclick="triggerToast('Generated complete CSV transaction audit extract')">
+<span class="material-symbols-outlined text-[16px]">sim_card_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm">
+<div class="md:col-span-5 flex items-center gap-space-xs bg-surface-container px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px]">search</span>
+<input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-full" id="tx-search" oninput="filterTransactions()" placeholder="Search transaction description, hash, or reference..." type="text"/>
+</div>
+<div class="md:col-span-7 flex flex-wrap items-center gap-space-xs justify-start md:justify-end">
+<!-- Type Filter -->
+<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5 gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span class="font-label-xs text-label-xs text-outline uppercase">TYPE:</span>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer" id="type-select" onchange="filterTransactions()">
+<option class="bg-surface-container-highest" value="ALL">All</option>
+<option class="bg-surface-container-highest" value="CREDIT">Credit (+)</option>
+<option class="bg-surface-container-highest" value="DEBIT">Debit (-)</option>
+</select>
+</div>
+<!-- Category Filter -->
+<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5 gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span class="font-label-xs text-label-xs text-outline uppercase">CAT:</span>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer" id="cat-select" onchange="filterTransactions()">
+<option class="bg-surface-container-highest" value="ALL">All Categories</option>
+<option class="bg-surface-container-highest" value="Income">Income / Inflow</option>
+<option class="bg-surface-container-highest" value="Operations">Operations</option>
+<option class="bg-surface-container-highest" value="Infra">Server &amp; Infra</option>
+<option class="bg-surface-container-highest" value="Bills">Bills &amp; Utilities</option>
+</select>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5 gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span class="font-label-xs text-label-xs text-outline uppercase">STATUS:</span>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer" id="status-select" onchange="filterTransactions()">
+<option class="bg-surface-container-highest" value="ALL">All Status</option>
+<option class="bg-surface-container-highest" value="Settled">Settled</option>
+<option class="bg-surface-container-highest" value="Cleared">Cleared</option>
+<option class="bg-surface-container-highest" value="Pending">Pending</option>
+</select>
+</div>
+<!-- Sort Filter -->
+<div class="flex items-center bg-surface-container rounded-lg px-2.5 py-1.5 gap-1 text-label-xs font-label-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">sort</span>
+<span class="text-on-surface">Newest First</span>
+</div>
+</div>
+</div>
+<!-- Transaction Dense Ledger Table -->
+<div class="w-full overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse" id="transactions-table">
+<thead>
+<tr class="bg-surface-container font-label-xs text-label-xs text-outline uppercase tracking-wider">
+<th class="py-2.5 px-3">RECORD ID</th>
+<th class="py-2.5 px-3">DESCRIPTION &amp; REFERENCE</th>
+<th class="py-2.5 px-3">CATEGORY</th>
+<th class="py-2.5 px-3">DATE / TIME</th>
+<th class="py-2.5 px-3 text-right">TYPE</th>
+<th class="py-2.5 px-3 text-right">AMOUNT (INR)</th>
+<th class="py-2.5 px-3 text-center">STATUS</th>
+<th class="py-2.5 px-3 text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Income" data-status="Settled" data-type="CREDIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984201</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">Monthly Salary Disbursal</span>
+<span class="font-label-xs text-label-xs text-outline">REF: DISB-2025-10</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Income</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 25, 2025 14:15</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-secondary font-medium">Credit</td>
+<td class="py-3 px-3 text-right font-semibold text-secondary font-label-md text-label-md">+₹35,000.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-secondary"></span> Settled
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984201')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Infra" data-status="Settled" data-type="DEBIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984192</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">AWS Cloud Infrastructure</span>
+<span class="font-label-xs text-label-xs text-outline">REF: INV-772910</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Server &amp; Infra</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 24, 2025 18:30</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-outline font-medium">Debit</td>
+<td class="py-3 px-3 text-right font-semibold text-on-surface font-label-md text-label-md">-₹8,450.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-secondary"></span> Settled
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984192')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Operations" data-status="Cleared" data-type="DEBIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984180</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">Office Supplies Depot</span>
+<span class="font-label-xs text-label-xs text-outline">REF: POS-4491</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Operations</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 22, 2025 11:00</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-outline font-medium">Debit</td>
+<td class="py-3 px-3 text-right font-semibold text-on-surface font-label-md text-label-md">-₹2,120.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary/20 text-primary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-primary"></span> Cleared
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984180')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Income" data-status="Settled" data-type="CREDIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984165</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">Client Retainer (Apex Global)</span>
+<span class="font-label-xs text-label-xs text-outline">REF: WIRE-99120</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Income</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 18, 2025 09:20</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-secondary font-medium">Credit</td>
+<td class="py-3 px-3 text-right font-semibold text-secondary font-label-md text-label-md">+₹45,000.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-secondary"></span> Settled
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984165')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Bills" data-status="Settled" data-type="DEBIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984140</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">Utility &amp; Power Grid</span>
+<span class="font-label-xs text-label-xs text-outline">REF: ACH-10023</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Bills</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 14, 2025 15:40</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-outline font-medium">Debit</td>
+<td class="py-3 px-3 text-right font-semibold text-on-surface font-label-md text-label-md">-₹1,800.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-secondary"></span> Settled
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984140')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container/60 transition-colors tx-row" data-cat="Infra" data-status="Settled" data-type="DEBIT">
+<td class="py-3 px-3 font-label-xs text-label-xs text-primary font-medium">TX-984112</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium tx-desc">Software Subscriptions (SaaS)</span>
+<span class="font-label-xs text-label-xs text-outline">REF: STRIPE-331</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs">Server &amp; Infra</span>
+</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-xs text-label-xs">Oct 08, 2025 08:12</td>
+<td class="py-3 px-3 text-right font-label-xs text-label-xs text-outline font-medium">Debit</td>
+<td class="py-3 px-3 text-right font-semibold text-on-surface font-label-md text-label-md">-₹3,400.00</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-1 h-1 rounded-full bg-secondary"></span> Settled
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Viewing Cryptographic Merkle receipt for TX-984112')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Pagination -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs font-label-xs text-label-xs text-outline">
+<div class="flex items-center gap-space-sm">
+<span>Showing <strong class="text-on-surface">6</strong> of <strong class="text-on-surface">32</strong> transactions</span>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded">
+<span>Show:</span>
+<select class="bg-transparent text-on-surface focus:outline-none cursor-pointer">
+<option class="bg-surface-container-high" value="6">6</option>
+<option class="bg-surface-container-high" value="15">15</option>
+<option class="bg-surface-container-high" value="30">30</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-medium">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">3</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- 5. Bottom Panel: Ledger Activity Trail & Restricted Zone -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Ledger Activity Trail (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">timeline</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Ledger Activity Trail</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">AUTO-AUDIT STREAM</span>
+</div>
+<!-- Vertical Timeline Nodes -->
+<div class="flex flex-col gap-space-md relative pl-6 before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-high">
+<!-- Event 1 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-surface-container-low"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Automated settlement consensus reached</span>
+<span class="font-label-xs text-label-xs text-outline">Today, 08:30 AM UTC</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Block #9421 cryptographic state snapshot committed across 3 Raft verification nodes.</p>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container-low"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Inbound wire credit (+₹35,000.00) confirmed</span>
+<span class="font-label-xs text-label-xs text-outline">Oct 25, 14:15 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Verified by Hardware Enclave Node (HSM-02) under reference <span class="font-label-xs text-label-xs text-on-surface-variant">DISB-2025-10</span>.</p>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container-low"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Outflow compliance check passed</span>
+<span class="font-label-xs text-label-xs text-outline">Oct 22, 11:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Rule-based anti-tamper validator cleared POS transaction ₹2,120.00.</p>
+</div>
+<!-- Event 4 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container-low"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Daily outflow limit updated to ₹5,00,000.00</span>
+<span class="font-label-xs text-label-xs text-outline">Oct 15, 09:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Operator Anas R. authenticated via multi-factor WebAuthn Passkey.</p>
+</div>
+<!-- Event 5 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-surface-container-low"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Monthly cryptographic audit seal anchored</span>
+<span class="font-label-xs text-label-xs text-outline">Oct 01, 00:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Root Merkle tree state permanently archived to institutional cold-store vault.</p>
+</div>
+</div>
+</div>
+<!-- Restricted Zone / Operational Controls (4 Cols) -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-error pb-2 border-b border-surface-container-high">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-headline-sm text-headline-sm">Restricted Zone</span>
+</div>
+<div class="bg-error-container/10 p-3 rounded-lg flex flex-col gap-1.5">
+<span class="font-label-xs text-label-xs text-error font-medium uppercase">CRITICAL WARNING</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Freezing or archiving this node immediately halts all inbound clearing cycles, recurring disbursements, and terminates active API access tokens.
+            </p>
+</div>
+<div class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>All balances remain cryptographically backed</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Audit history retained for 7 years compliance</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-2.5 px-space-sm bg-surface-container hover:bg-error-container hover:text-on-error-container transition-colors rounded font-body-md text-body-md text-error flex items-center justify-center gap-2" onclick="triggerToast('Simulating node lock authorization...')">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Freeze Account Operations</span>
+</button>
+<span class="font-label-xs text-label-xs text-center text-outline">Requires Super-Admin cryptographic signature</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline JavaScript for Component Interactions -->
+<script>
+  function triggerToast(message) {
+    const toast = document.getElementById('toast-notify');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+    toastText.innerText = message;
+    toast.classList.remove('opacity-0', 'translate-y-16', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-16', 'pointer-events-none');
+    }, 2800);
+  }
+
+  function copyHash(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      triggerToast('Copied to clipboard: ' + text);
+    }).catch(() => {
+      triggerToast('Identifier: ' + text);
+    });
+  }
+
+  function toggleDropdown() {
+    const dd = document.getElementById('action-dropdown');
+    if (dd) {
+      dd.classList.toggle('hidden');
+    }
+  }
+
+  // Close dropdown on click outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('more-actions-menu');
+    const dd = document.getElementById('action-dropdown');
+    if (menu && dd && !menu.contains(e.target)) {
+      dd.classList.add('hidden');
+    }
+  });
+
+  function switchTimeRange(btn) {
+    const parent = btn.parentElement;
+    Array.from(parent.children).forEach(c => {
+      c.className = "px-2.5 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-colors";
+    });
+    btn.className = "px-2.5 py-1 rounded font-label-xs text-label-xs bg-surface-container-high text-primary font-medium";
+    triggerToast('Refreshed chart range: ' + btn.innerText);
+  }
+
+  function filterTransactions() {
+    const query = (document.getElementById('tx-search')?.value || '').toLowerCase();
+    const type = document.getElementById('type-select')?.value || 'ALL';
+    const cat = document.getElementById('cat-select')?.value || 'ALL';
+    const status = document.getElementById('status-select')?.value || 'ALL';
+    
+    const rows = document.querySelectorAll('.tx-row');
+    rows.forEach(row => {
+      const rowType = row.getAttribute('data-type');
+      const rowCat = row.getAttribute('data-cat');
+      const rowStatus = row.getAttribute('data-status');
+      const text = row.querySelector('.tx-desc')?.innerText.toLowerCase() || '';
+      
+      const matchesQuery = !query || text.includes(query) || row.innerText.toLowerCase().includes(query);
+      const matchesType = type === 'ALL' || rowType === type;
+      const matchesCat = cat === 'ALL' || rowCat === cat;
+      const matchesStatus = status === 'ALL' || rowStatus === status;
+
+      if (matchesQuery && matchesType && matchesCat && matchesStatus) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script></main></div></body></html>

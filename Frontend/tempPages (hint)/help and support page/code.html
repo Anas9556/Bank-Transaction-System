@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#93000a","on-tertiary-container":"#222a3b","background":"#0e1323","on-surface":"#dee1f9","tertiary-fixed-dim":"#bec6dd","on-primary-fixed":"#00164d","inverse-on-surface":"#2b3041","primary-fixed-dim":"#b5c4ff","surface-container-highest":"#2f3446","primary-container":"#648aff","tertiary":"#bec6dd","secondary-container":"#00b290","secondary-fixed-dim":"#4fddb8","on-error":"#690005","on-tertiary":"#283042","on-secondary-fixed":"#002018","on-surface-variant":"#c3c5d7","on-primary-fixed-variant":"#003cad","on-background":"#dee1f9","surface-tint":"#b5c4ff","secondary-fixed":"#70fad3","on-secondary-fixed-variant":"#005140","inverse-primary":"#1a53d6","surface-container-high":"#25293a","surface":"#0e1323","tertiary-fixed":"#dbe2fa","primary-fixed":"#dce1ff","surface-bright":"#34394a","surface-variant":"#2f3446","surface-container-low":"#161b2b","outline":"#8d90a0","on-primary":"#00297b","on-secondary":"#00382b","inverse-surface":"#dee1f9","on-primary-container":"#00236d","primary":"#b5c4ff","secondary":"#4fddb8","surface-dim":"#0e1323","on-secondary-container":"#003d30","surface-container":"#1a1f30","on-tertiary-fixed-variant":"#3f475a","error":"#ffb4ab","on-tertiary-fixed":"#131b2c","on-error-container":"#ffdad6","tertiary-container":"#8990a6","outline-variant":"#434654","surface-container-lowest":"#080d1d"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1.5rem","space-sm":"0.5rem","space-md":"1rem","space-lg":"1.5rem","margin":"2rem","space-xs":"0.25rem","margin-sm":"1.25rem","space-xl":"2rem","gutter-sm":"1rem"},fontFamily:{"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"label-md":["JetBrains Mono"],"body-sm":["Inter"],"label-xs":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"headline-lg":["Inter"],"body-md":["Inter"]},fontSize:{"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"500"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between pb-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Ledgerly</span><span class="font-label-xs text-label-xs text-secondary mt-1">SYSTEM V2.4</span></div></div><span class="font-label-xs text-label-xs bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">CORE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container/20 text-primary border-t border-primary/40 font-medium rounded-lg shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)]"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="accounts" href="#">Accounts</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transactions" href="#">Transactions</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transfers" href="#">Transfers</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="categories" href="#">Categories</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports-and-analytics" href="#">Reports &amp; Analytics</a></nav><div class="pt-space-xs"><div class="px-space-sm pb-1"><span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">INTELLIGENCE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container/20 text-primary border-t border-primary/40 font-medium rounded-lg shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)]"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-insights" href="#">Financial Insights</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="anomaly-detection" href="#">Anomaly Detection</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ledger-integrity" href="#">Ledger Integrity</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-replay" href="#">Audit Replay</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="what-if-simulator" href="#">What-If Simulator</a></nav></div></div><div class="flex flex-col gap-space-sm px-space-md"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container/20 text-primary border-t border-primary/40 font-medium rounded-lg shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)]"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="help-and-support" href="#">Help &amp; Support</a></nav><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="font-label-sm text-label-sm text-primary font-bold">AR</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col min-w-0"><span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Anas R.</span><span class="font-label-xs text-label-xs text-outline truncate">anas@ledgerly.internal</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">unfold_more</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-label-xs text-label-xs text-outline uppercase">WORKSPACE</span><span class="font-label-xs text-label-xs text-outline">/</span><span class="font-label-sm text-label-sm text-on-surface font-medium uppercase">HELP &amp; SUPPORT</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-64" placeholder="Search transactions, hash, or entity..." type="text"/></div><div class="flex items-center gap-space-sm px-2.5 py-1 bg-surface-container rounded-lg"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-xs text-label-xs text-secondary font-medium tracking-wide">CLUSTER-04 ONLINE</span></div><span class="font-label-xs text-label-xs text-outline-variant">|</span><span class="font-label-xs text-label-xs text-outline font-medium">12ms TLS 1.3</span></div><button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary"></span></button><button class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center"><span class="font-label-sm text-label-sm text-on-primary font-bold">AR</span></div><span class="material-symbols-outlined text-outline text-[16px] pr-1">arrow_drop_down</span></button></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Telemetry Diagnostic Bar & View State Controller -->
+<div class="w-full bg-surface-container-lowest px-space-lg py-space-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-sm">
+<div class="flex items-center flex-wrap gap-space-sm font-label-xs text-label-xs text-outline">
+<span class="flex items-center gap-1.5 text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        HSM AUTHENTICATED
+      </span>
+<span>•</span>
+<span class="text-on-surface-variant font-label-xs">DOCS INDEX: <span class="text-primary font-medium">V2.4-REVISED</span></span>
+<span>•</span>
+<span>ENCLAVE KB: <span class="text-on-surface font-medium">2025.10.28</span></span>
+<span>•</span>
+<span>REVISION: <span class="font-label-xs text-secondary-fixed-dim">SHA256-d41d8cd9</span></span>
+<span>•</span>
+<span class="text-tertiary">FIPS-140-3 LEVEL 4</span>
+</div>
+<!-- Diagnostic Simulator Switcher -->
+<div class="flex items-center gap-1.5 overflow-x-auto py-0.5">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider mr-1 shrink-0">VIEW STATE:</span>
+<button class="sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-primary-container/20 text-primary font-medium shadow-sm" id="btn-state-normal" onclick="setSimState('normal')">
+        Normal View (Active)
+      </button>
+<button class="sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-surface-container text-outline hover:text-on-surface" id="btn-state-search" onclick="setSimState('search')">
+        Search Results (4)
+      </button>
+<button class="sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-surface-container text-outline hover:text-on-surface" id="btn-state-empty" onclick="setSimState('empty')">
+        Empty Search State
+      </button>
+<button class="sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-surface-container text-outline hover:text-on-surface" id="btn-state-faq" onclick="setSimState('faq')">
+        FAQ Expanded
+      </button>
+<button class="sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-surface-container text-outline hover:text-on-surface flex items-center gap-1" id="btn-state-modal" onclick="openReportModal()">
+<span>Report Modal</span>
+<span class="material-symbols-outlined text-[13px] text-secondary">launch</span>
+</button>
+</div>
+</div>
+<div class="w-full max-w-7xl mx-auto px-space-md xl:px-space-lg py-space-lg flex flex-col gap-space-xl">
+<!-- Title & Sovereign Summary Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-secondary tracking-widest uppercase bg-surface-container px-2 py-0.5 rounded">PROTOCOL ASSISTANCE</span>
+<span class="font-label-xs text-label-xs text-outline">CLUSTER #04-SHARD</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Help &amp; Support</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Find answers, understand double-entry ledger operations, and get assistance navigating Ledgerly institutional protocols.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-2.5 rounded-lg shrink-0">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">RAFT QUORUM</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 7/7 NODES SYNCED
+          </span>
+</div>
+<div class="h-6 w-px bg-surface-container-high mx-1"></div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">RESPONSE SLA</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">&lt; 15 MIN TIER-1</span>
+</div>
+</div>
+</div>
+<!-- Prominent Search Section with Glassmorphism & Keyboard Prompt -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full rounded-xl bg-surface-container-low shadow-xl p-2.5 sm:p-3 transition-all focus-within:shadow-[0_0_24px_-4px_rgba(79,124,255,0.35)]">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px] pl-2">search</span>
+<input autocomplete="off" class="w-full bg-transparent font-body-lg text-body-lg text-on-surface placeholder:text-outline focus:outline-none" id="kb-search-input" oninput="handleSearch(this.value)" placeholder="Search help articles, features, invariants, and common questions..." type="text"/>
+<button class="hidden items-center justify-center w-6 h-6 rounded-md bg-surface-container-high text-outline hover:text-on-surface transition-colors" id="search-clear-btn" onclick="clearSearch()" title="Clear Search">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<div class="hidden sm:flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded text-outline font-label-xs text-label-xs">
+<span>⌘</span>
+<span>K</span>
+</div>
+</div>
+</div>
+<!-- Quick Suggested Search Pills -->
+<div class="flex items-center flex-wrap gap-2 pt-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">SUGGESTED TOPICS:</span>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="applyPillQuery('Managing Accounts')">
+          Managing Accounts
+        </button>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="applyPillQuery('Recording Transactions')">
+          Recording Transactions
+        </button>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="applyPillQuery('Reports &amp; Analytics')">
+          Reports &amp; Analytics
+        </button>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="applyPillQuery('Ledger Integrity')">
+          Ledger Integrity
+        </button>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="applyPillQuery('Account Security')">
+          Account Security
+        </button>
+<button class="font-label-xs text-label-xs px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-colors" onclick="applyPillQuery('Double-Entry Invariants')">
+          Double-Entry Invariants
+        </button>
+</div>
+</div>
+<!-- DYNAMIC SEARCH RESULT PANEL (Hidden by default, shown when query active or via state simulator) -->
+<div class="hidden flex-col gap-space-md p-space-md bg-surface-container-low rounded-xl" id="search-results-panel">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-secondary font-medium">QUERY MATCHES</span>
+<span class="font-label-xs text-label-xs text-outline" id="search-result-count">(4 Articles located in KB)</span>
+</div>
+<button class="font-label-xs text-label-xs text-primary hover:underline" onclick="clearSearch()">Return to Hub</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="results-items-container">
+<!-- Result Item 1 -->
+<a class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="#faq-section">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-secondary">LEDGER ENGINE</span>
+<span class="font-label-xs text-label-xs text-outline">MATCH 98%</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">How do I add a new transaction?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Add Transaction workflow: designation of Income credit or Expense debit, INR settlement amount, GAAP category selection, and cryptographic consensus anchoring.
+          </p>
+</a>
+<!-- Result Item 2 -->
+<a class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="#faq-section">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary">AUDIT &amp; PROOFS</span>
+<span class="font-label-xs text-label-xs text-outline">MATCH 94%</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Verifying zero-knowledge Merkle root leaves</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Instructions on verifying cryptographic proofs directly against the underlying consensus ledger without decrypting sovereign journal payloads.
+          </p>
+</a>
+<!-- Result Item 3 -->
+<a class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="#faq-section">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary">ACCOUNTS</span>
+<span class="font-label-xs text-label-xs text-outline">MATCH 89%</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Understanding settled vs available balances</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Detailed breakdown of bi-temporal accounting, pending consensus logs, and institutional treasury reserve policy buffers.
+          </p>
+</a>
+<!-- Result Item 4 -->
+<a class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" href="#faq-section">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-secondary">SECURITY</span>
+<span class="font-label-xs text-label-xs text-outline">MATCH 82%</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Hardware token (YubiKey / WebAuthn) FIDO2 setup</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Configuring hardware authentication keys for multi-sig ledger sign-offs, enclave policy overrides, and key rotation protocols.
+          </p>
+</a>
+</div>
+</div>
+<!-- EMPTY SEARCH STATE CONTAINER -->
+<div class="hidden flex-col items-center justify-center p-space-xl bg-surface-container-low rounded-xl text-center" id="search-empty-panel">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-outline mb-space-sm">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">No Ledger Documentation Found</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-1 mb-space-md">
+        No cryptographic specifications or help articles matched your query. Check the terminology or inspect consensus logs.
+      </p>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-bright" onclick="clearSearch()">
+          Clear Filters
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container/30 text-primary font-body-sm text-body-sm hover:bg-primary-container/40" onclick="openReportModal()">
+          Request Article from Enclave
+        </button>
+</div>
+</div>
+<!-- MAIN DEFAULT CONTENT WRAPPER -->
+<div class="flex flex-col gap-space-xl" id="main-hub-content">
+<!-- Institutional Categories Grid (5 Cards in 3/2 asymmetric grid) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">category</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-medium">Institutional Knowledge Bases</h2>
+</div>
+<span class="font-label-xs text-label-xs text-outline">5 ENCLAVES • 16 SECTIONS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Category 1: Getting Started -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">3 Articles</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Getting Started</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Foundational concepts, node topology, and navigating the sovereign Ledgerly workspace.
+                </p>
+</div>
+<ul class="flex flex-col gap-1.5 pt-space-xs">
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Understanding the financial dashboard &amp; telemetry</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Creating and managing liquidity accounts</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Navigating sovereign ledger workspaces</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">DOC-ID: SEC-01</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+<!-- Category 2: Accounts & Transactions -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">4 Articles</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Accounts &amp; Transactions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Execution of double-entry postings, account reconciliation, and fee schedules.
+                </p>
+</div>
+<ul class="flex flex-col gap-1.5 pt-space-xs">
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Adding income credits and expense disbursements</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Understanding account settled vs available balances</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Reviewing granular transaction audit proofs</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Configuring internal double-leg transfers</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">DOC-ID: SEC-02</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+<!-- Category 3: Reports & Analytics -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">query_stats</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">3 Articles</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Reports &amp; Analytics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Reading financial summaries, cash-flow vectors, and automated export mechanisms.
+                </p>
+</div>
+<ul class="flex flex-col gap-1.5 pt-space-xs">
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Reading financial summaries &amp; net cash flow</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Interpreting daily cash flow dynamics &amp; treasury curves</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Exporting cryptographically sealed audit reports</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">DOC-ID: SEC-03</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+<!-- Category 4: Security & Access Controls -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group lg:col-span-1 md:col-span-1">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">3 Articles</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Security &amp; Access Controls</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Enclave credentials, FIPS-140-3 validation, and multi-sig authority policies.
+                </p>
+</div>
+<ul class="flex flex-col gap-1.5 pt-space-xs">
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Managing institutional profile and signing keys</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Hardware token (YubiKey / WebAuthn) FIDO2 setup</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-0.5" href="#">
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="truncate">Dual-superadmin multi-sig deactivation protocol</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">DOC-ID: SEC-04</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+<!-- Category 5: Ledger & Cryptographic Audit -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group lg:col-span-2 md:col-span-1">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">account_tree</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Ledger &amp; Cryptographic Audit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Raft consensus, Merkle tree verification, and bi-temporal invariance.</p>
+</div>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">3 Articles</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-2">
+<a class="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors flex flex-col justify-between" href="#">
+<span class="font-label-xs text-label-xs text-outline">INVARIANT 01</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">Understanding double-entry ledger invariants</span>
+<span class="font-label-xs text-label-xs text-secondary mt-2">Σ Debits = Σ Credits</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors flex flex-col justify-between" href="#">
+<span class="font-label-xs text-label-xs text-outline">INVARIANT 02</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">Verifying zero-knowledge Merkle root leaves</span>
+<span class="font-label-xs text-label-xs text-primary mt-2">ED25519 Root Tree</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors flex flex-col justify-between" href="#">
+<span class="font-label-xs text-label-xs text-outline">INVARIANT 03</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">Reviewing immutable audit timelines &amp; replay</span>
+<span class="font-label-xs text-label-xs text-secondary mt-2">Bi-temporal Logs</span>
+</a>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">DOC-ID: SEC-05 • HIGH ASSURANCE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Section with Interactive Accordions -->
+<div class="flex flex-col gap-space-md" id="faq-section">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">help_center</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-medium">Frequently Asked Questions</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Institutional operational clarity on common ledger actions, consensus checkpoints, and protocol behaviors.
+            </p>
+</div>
+<button class="font-label-xs text-label-xs text-primary hover:underline self-start md:self-auto" onclick="expandAllFaqs()">Expand All FAQs</button>
+</div>
+<div class="flex flex-col gap-2">
+<!-- FAQ 1: OPEN DEFAULT -->
+<div class="faq-item rounded-xl bg-surface-container-low transition-all overflow-hidden" data-id="faq-1">
+<button class="w-full flex items-center justify-between p-space-md text-left hover:bg-surface-container/40 transition-colors" onclick="toggleFaq('faq-1')">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs text-secondary px-2 py-0.5 rounded bg-surface-container">FAQ #01</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">How do I add a new transaction?</span>
+</div>
+<span class="faq-icon material-symbols-outlined text-primary text-[20px] transition-transform rotate-180">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md pt-0 flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Navigate to <span class="text-on-surface font-medium">Transactions → Add Transaction (+)</span>. Select the transaction classification (<span class="text-secondary font-medium">Income credit</span> or <span class="text-primary font-medium">Expense debit</span>), input the gross amount in INR, designate the settled target account, and select the GAAP classification category. The double-entry engine computes the balance trajectory, validates pre-flight node invariants, and anchors the posting with cryptographic consensus.
+              </p>
+<div class="flex items-center flex-wrap gap-space-sm p-2.5 rounded-lg bg-surface-container">
+<span class="font-label-xs text-label-xs text-outline uppercase">METADATA:</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">TAGS: TRANSACTIONS, DOUBLE-ENTRY, GAAP</span>
+<span class="font-label-xs text-label-xs text-outline-variant">|</span>
+<span class="font-label-xs text-label-xs text-secondary">CONSENSUS LATENCY: ~12ms</span>
+</div>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="faq-item rounded-xl bg-surface-container-low transition-all overflow-hidden" data-id="faq-2">
+<button class="w-full flex items-center justify-between p-space-md text-left hover:bg-surface-container/40 transition-colors" onclick="toggleFaq('faq-2')">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs text-outline px-2 py-0.5 rounded bg-surface-container">FAQ #02</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">What is the difference between income, expense, and an internal transfer?</span>
+</div>
+<span class="faq-icon material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span class="text-on-surface font-medium">Income</span> increases ledger equity via an external counterparty credit, while <span class="text-on-surface font-medium">Expense</span> decreases capital reserves via an authorized disbursement. In contrast, an internal <span class="text-secondary font-medium">Transfer</span> is a dual-leg atomic movement between two internal accounts (e.g., Primary Operational to Savings Reserve Vault) which results in a net-zero capital delta (<span class="font-label-sm text-secondary font-mono">₹0.00</span>) on overall treasury equity.
+              </p>
+<div class="flex items-center gap-space-sm p-2 rounded-lg bg-surface-container font-label-xs text-label-xs text-outline">
+<span>POSTING RULE:</span>
+<span class="text-on-surface">DEBIT DESTINATION (+), CREDIT SOURCE (-) SIMULTANEOUSLY</span>
+</div>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="faq-item rounded-xl bg-surface-container-low transition-all overflow-hidden" data-id="faq-3">
+<button class="w-full flex items-center justify-between p-space-md text-left hover:bg-surface-container/40 transition-colors" onclick="toggleFaq('faq-3')">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs text-outline px-2 py-0.5 rounded bg-surface-container">FAQ #03</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">How can I view transactions for a specific date range or account enclave?</span>
+</div>
+<span class="faq-icon material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                In the <span class="text-on-surface font-medium">Transactions</span> ledger explorer or <span class="text-on-surface font-medium">Reports &amp; Analytics</span>, toggle the temporal period selector (7D, 30D, 90D, YTD, or Custom ISO date range). You can filter the ledger view by target account, classification, or execution node to isolate specific journal entries with sub-millisecond query indexing.
+              </p>
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="faq-item rounded-xl bg-surface-container-low transition-all overflow-hidden" data-id="faq-4">
+<button class="w-full flex items-center justify-between p-space-md text-left hover:bg-surface-container/40 transition-colors" onclick="toggleFaq('faq-4')">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs text-outline px-2 py-0.5 rounded bg-surface-container">FAQ #04</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Why might my account balance differ from an expected amount?</span>
+</div>
+<span class="faq-icon material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Ledgerly enforces strict bi-temporal accounting. Discrepancies usually stem from unsettled pending verification transactions, uncommitted Raft batch logs, or difference between <span class="text-on-surface font-medium">Settled Balance</span> and <span class="text-secondary font-medium">Available Balance</span> due to active treasury policy buffer floors or collateral locks.
+              </p>
+</div>
+</div>
+<!-- FAQ 5 -->
+<div class="faq-item rounded-xl bg-surface-container-low transition-all overflow-hidden" data-id="faq-5">
+<button class="w-full flex items-center justify-between p-space-md text-left hover:bg-surface-container/40 transition-colors" onclick="toggleFaq('faq-5')">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs text-outline px-2 py-0.5 rounded bg-surface-container">FAQ #05</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">How can I review and verify ledger integrity information?</span>
+</div>
+<span class="faq-icon material-symbols-outlined text-outline text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Open any settled transaction record and inspect the <span class="text-on-surface font-medium">'Ledger Record &amp; Cryptographic Proof'</span> panel. Each entry displays its block height, Merkle root leaf, previous block hash, and current digest. You can click <span class="text-primary font-medium">'Verify Cryptographic Proof'</span> to validate that the record has not been altered or backdated against peer nodes.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Still Need Help? Escalation Options (3 Cards) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">headset_mic</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-medium">Operational Support &amp; Escalation</h2>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">TIER-1 DISPATCH STANDBY</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Documentation -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">TECHNICAL REFERENCE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Institutional Documentation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Read the comprehensive Ledgerly System v2.4 API, CLI daemon guides, and compliance invariant specifications.
+              </p>
+</div>
+<div class="pt-space-md">
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors" href="#">
+                Browse Documentation <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Report An Issue -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<span class="font-label-xs text-label-xs text-error font-medium uppercase tracking-wider">TICKET DISPATCH</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Report an Operational Issue</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Encountered a cluster mismatch, consensus drift, or UI anomaly? Submit an encrypted telemetry bundle to enclave ops.
+              </p>
+</div>
+<div class="pt-space-md">
+<button class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary hover:text-secondary-fixed transition-colors" onclick="openReportModal()">
+                Open Ticket Form <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Contact Enclave Support -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary uppercase tracking-wider">ENTERPRISE PROTOCOL</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Contact Enclave Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Direct hotline escalation for designated institutional superadmins and sovereign treasury operators.
+              </p>
+</div>
+<div class="pt-space-md">
+<button class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors" onclick="requestCallbackNotification()">
+                Request Support Callback <span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Telemetry & System Footnote -->
+<div class="w-full pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-xs text-label-xs text-outline pb-space-lg">
+<div class="flex items-center flex-wrap gap-2">
+<span class="text-on-surface-variant font-medium">Ledgerly — System v2.4</span>
+<span>(Build 2025.10.28-RELEASE)</span>
+<span>•</span>
+<span>Consensus: Raft v3</span>
+<span>•</span>
+<span>Core: ED25519-FIPS-140-3</span>
+</div>
+<div class="flex items-center flex-wrap gap-space-md">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Ledger Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Compliance Whitepaper</a>
+<div class="flex items-center gap-1 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>All Enclave Systems Operational [99.998%]</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Encrypted Operational Report Ticket Form -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md p-space-md" id="report-modal">
+<div class="relative w-full max-w-xl rounded-xl bg-surface-container-low shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">bug_report</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Enclave Incident Dispatch</h3>
+<span class="font-label-xs text-label-xs text-outline">SECURE HSM SUBMISSION TICKET</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-high transition-colors" onclick="closeReportModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-md flex flex-col gap-space-md" onsubmit="handleTicketSubmit(event)">
+<div class="flex flex-col gap-1">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Classification &amp; Priority</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex items-center gap-1.5 p-2 rounded bg-surface-container cursor-pointer text-body-sm text-body-sm text-on-surface hover:bg-surface-container-high">
+<input checked="" class="text-primary accent-primary" name="priority" type="radio" value="p3"/>
+<span>P3 - General</span>
+</label>
+<label class="flex items-center gap-1.5 p-2 rounded bg-surface-container cursor-pointer text-body-sm text-body-sm text-on-surface hover:bg-surface-container-high">
+<input class="text-primary accent-primary" name="priority" type="radio" value="p2"/>
+<span>P2 - Degraded</span>
+</label>
+<label class="flex items-center gap-1.5 p-2 rounded bg-surface-container cursor-pointer text-body-sm text-body-sm text-error hover:bg-surface-container-high">
+<input class="text-error accent-error" name="priority" type="radio" value="p1"/>
+<span>P1 - Invariant Break</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Target Enclave / Component</label>
+<select class="w-full bg-surface-container text-body-md font-body-md text-on-surface px-space-sm py-2 rounded-lg focus:outline-none">
+<option>Consensus &amp; Raft Engine (Node #04)</option>
+<option>Double-Entry Invariant Validator</option>
+<option>Transaction Settlement Engine</option>
+<option>Reports &amp; ZK Proof Pipeline</option>
+<option>Auth Key Vault &amp; FIDO2 Token</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Anomaly Description &amp; Hash Footprint</label>
+<textarea class="w-full bg-surface-container text-body-md font-body-md text-on-surface p-space-sm rounded-lg focus:outline-none placeholder:text-outline" placeholder="Describe the mismatch, transaction digest, or unexpected state..." required="" rows="3"></textarea>
+</div>
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between text-label-xs font-label-xs text-outline">
+<span>AUTOMATIC ENCLAVE METADATA:</span>
+<span class="text-secondary font-mono">TLS 1.3 | SHA256-d41d8cd9 | USER: anas@ledgerly.internal</span>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" onclick="closeReportModal()" type="button">
+            Cancel
+          </button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-medium hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Dispatch Encrypted Ticket</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-2 px-space-md py-space-sm rounded-lg bg-surface-container-high shadow-2xl text-on-surface font-body-sm text-body-sm" id="toast-notify">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span id="toast-text">Ticket dispatched to Enclave Operations team.</span>
+</div>
+</div>
+<script>
+  function toggleFaq(id) {
+    const item = document.querySelector(`[data-id="${id}"]`);
+    if (!item) return;
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+    
+    const isHidden = content.classList.contains('hidden');
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180', 'text-primary');
+      icon.classList.remove('text-outline');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180', 'text-primary');
+      icon.classList.add('text-outline');
+    }
+  }
+
+  function expandAllFaqs() {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180', 'text-primary');
+      icon.classList.remove('text-outline');
+    });
+  }
+
+  function handleSearch(query) {
+    const val = query.trim().toLowerCase();
+    const clearBtn = document.getElementById('search-clear-btn');
+    const resultsPanel = document.getElementById('search-results-panel');
+    const emptyPanel = document.getElementById('search-empty-panel');
+    const mainHub = document.getElementById('main-hub-content');
+
+    if (val.length > 0) {
+      clearBtn.classList.remove('hidden');
+      clearBtn.classList.add('flex');
+    } else {
+      clearBtn.classList.add('hidden');
+      clearBtn.classList.remove('flex');
+      resultsPanel.classList.add('hidden');
+      emptyPanel.classList.add('hidden');
+      mainHub.classList.remove('hidden');
+      return;
+    }
+
+    if (val.includes('xyz') || val.includes('invalid') || val.includes('unknown') || val.includes('errorcode99')) {
+      resultsPanel.classList.add('hidden');
+      emptyPanel.classList.remove('hidden');
+      mainHub.classList.add('hidden');
+    } else {
+      emptyPanel.classList.add('hidden');
+      resultsPanel.classList.remove('hidden');
+      mainHub.classList.add('hidden');
+      document.getElementById('search-result-count').textContent = `(4 Articles located matching "${query}")`;
+    }
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('kb-search-input');
+    input.value = '';
+    handleSearch('');
+    setSimState('normal');
+  }
+
+  function applyPillQuery(topic) {
+    const input = document.getElementById('kb-search-input');
+    input.value = topic;
+    handleSearch(topic);
+  }
+
+  function setSimState(state) {
+    // Reset buttons
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      btn.className = "sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-surface-container text-outline hover:text-on-surface";
+    });
+
+    const activeClass = "sim-btn px-2.5 py-1 rounded-lg font-label-xs text-label-xs transition-all bg-primary-container/20 text-primary font-medium shadow-sm";
+
+    const resultsPanel = document.getElementById('search-results-panel');
+    const emptyPanel = document.getElementById('search-empty-panel');
+    const mainHub = document.getElementById('main-hub-content');
+    const input = document.getElementById('kb-search-input');
+
+    if (state === 'normal') {
+      document.getElementById('btn-state-normal').className = activeClass;
+      input.value = '';
+      resultsPanel.classList.add('hidden');
+      emptyPanel.classList.add('hidden');
+      mainHub.classList.remove('hidden');
+    } else if (state === 'search') {
+      document.getElementById('btn-state-search').className = activeClass;
+      input.value = 'Transactions & Ledger Invariants';
+      resultsPanel.classList.remove('hidden');
+      emptyPanel.classList.add('hidden');
+      mainHub.classList.add('hidden');
+    } else if (state === 'empty') {
+      document.getElementById('btn-state-empty').className = activeClass;
+      input.value = 'invalid_protocol_hash_#99999';
+      resultsPanel.classList.add('hidden');
+      emptyPanel.classList.remove('hidden');
+      mainHub.classList.add('hidden');
+    } else if (state === 'faq') {
+      document.getElementById('btn-state-faq').className = activeClass;
+      input.value = '';
+      resultsPanel.classList.add('hidden');
+      emptyPanel.classList.add('hidden');
+      mainHub.classList.remove('hidden');
+      expandAllFaqs();
+      document.getElementById('faq-section').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function openReportModal() {
+    const modal = document.getElementById('report-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeReportModal() {
+    const modal = document.getElementById('report-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function handleTicketSubmit(e) {
+    e.preventDefault();
+    closeReportModal();
+    showToast("Incident ticket queued. Enclave operator assigned within 15m.");
+  }
+
+  function requestCallbackNotification() {
+    showToast("Callback request acknowledged. Sovereign phone bridge dialing...");
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-notify');
+    const text = document.getElementById('toast-text');
+    text.innerText = message;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 4500);
+  }
+
+  // Keyboard shortcut listener for Command/Ctrl + K to focus search
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      const input = document.getElementById('kb-search-input');
+      input.focus();
+      input.select();
+    }
+    if (e.key === 'Escape') {
+      closeReportModal();
+    }
+  });
+</script></main></div></body></html>

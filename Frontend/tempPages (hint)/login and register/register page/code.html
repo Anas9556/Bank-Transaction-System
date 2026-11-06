@@ -1,0 +1,725 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_blank" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-surface": "#dee1f9",
+          "on-background": "#dee1f9",
+          "inverse-on-surface": "#2b3041",
+          "outline-variant": "#434654",
+          "surface-container-highest": "#2f3446",
+          "surface-dim": "#0e1323",
+          "surface-container-lowest": "#080d1d",
+          "background": "#0e1323",
+          "on-tertiary": "#283042",
+          "surface-bright": "#34394a",
+          "on-error-container": "#ffdad6",
+          "primary": "#b5c4ff",
+          "on-primary-fixed-variant": "#003cad",
+          "error": "#ffb4ab",
+          "on-primary-container": "#00236d",
+          "secondary": "#4fddb8",
+          "on-surface-variant": "#c3c5d7",
+          "primary-fixed": "#dce1ff",
+          "inverse-primary": "#1a53d6",
+          "on-tertiary-fixed": "#131b2c",
+          "surface-variant": "#2f3446",
+          "outline": "#8d90a0",
+          "tertiary-container": "#8990a6",
+          "secondary-fixed": "#70fad3",
+          "secondary-fixed-dim": "#4fddb8",
+          "surface-container": "#1a1f30",
+          "on-secondary-fixed-variant": "#005140",
+          "on-secondary-container": "#003d30",
+          "secondary-container": "#00b290",
+          "on-error": "#690005",
+          "surface": "#0e1323",
+          "on-surface": "#dee1f9",
+          "surface-container-low": "#161b2b",
+          "tertiary": "#bec6dd",
+          "tertiary-fixed-dim": "#bec6dd",
+          "primary-fixed-dim": "#b5c4ff",
+          "surface-tint": "#b5c4ff",
+          "on-primary-fixed": "#00164d",
+          "surface-container-high": "#25293a",
+          "error-container": "#93000a",
+          "on-secondary": "#00382b",
+          "primary-container": "#648aff",
+          "on-primary": "#00297b",
+          "tertiary-fixed": "#dbe2fa",
+          "on-secondary-fixed": "#002018",
+          "on-tertiary-fixed-variant": "#3f475a",
+          "on-tertiary-container": "#222a3b"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "gutter-sm": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "margin-sm": "1.25rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "label-sm": [
+            "JetBrains Mono"
+          ],
+          "label-xs": [
+            "JetBrains Mono"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-xs": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container"><main class="w-full flex-1 flex flex-col"><div class="flex flex-col w-full">
+<div class="relative w-full min-h-[calc(100vh-64px)] flex items-center justify-center py-space-lg px-margin-sm lg:px-margin overflow-hidden">
+<!-- Ambient Cryptographic Node Backdrop -->
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<div class="absolute top-1/4 left-1/12 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-1/3 right-1/12 w-[30rem] h-[30rem] bg-secondary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute top-2/3 left-1/3 w-80 h-80 bg-surface-container-high/40 rounded-full blur-2xl"></div>
+</div>
+<!-- Main Two-Column Container (Max 1200px) -->
+<div class="relative w-full max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center z-10">
+<!-- LEFT PANEL: Brand Telemetry & Value Visualization (~45% width: 5 cols on lg) -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-xl">
+<!-- Brand Header Section -->
+<div class="flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img alt="Ledgerly Geometric Mark" class="w-9 h-9 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WM6I13LvKay3i5vub6V7lzxafTTCtPWZPmuOLB6E_3VQVPokIzIyFvIWO792UDSY4ZN68aG3ybNAoHkHP0k9hnZEiEjn-Z8BPgwXTPs76zEcExSo5qjk8V07VQzFw9MB1il6VpSpHwroBMkQP3maQS9gFm7EeonddwLd8xTZcpUL6fINCORsTTG_V4Z5nuJLgkIhzl9Eyo3gkHnScUDFmLQKuP8Bl56hmEpeUNBuRdF-j-hiSifq264oU">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Ledgerly</span>
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">Institutional Core</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container-high text-secondary font-label-xs text-label-xs tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>SYSTEM v2.4</span>
+</div>
+</div>
+<div class="pt-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+              Build a clearer picture of your money.
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Create your workspace to organize financial activity and gain better visibility into your transactions.
+            </p>
+</div>
+</div>
+<!-- Abstract Financial Data Visualization: Ingress Gateways & Verified Block Stream -->
+<div class="relative p-space-md bg-surface-container-low rounded-xl shadow-xl space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px] text-secondary">lan</span>
+<span>Node Stream Telemetry</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container-high px-2 py-0.5 rounded">0.42 ms SYNC</span>
+</div>
+<!-- Flow Stream Mockup -->
+<div class="space-y-space-sm">
+<!-- Balance Card Snapshot -->
+<div class="p-3 bg-surface-container rounded flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-label-xs text-label-xs text-outline uppercase">Settlement Vault</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">$14,892,450.00</div>
+</div>
+</div>
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+2.4%</span>
+</div>
+</div>
+<!-- Dynamic Stream Gateway SVG -->
+<div class="relative h-20 w-full overflow-hidden bg-surface-container-lowest/80 rounded flex items-center px-4">
+<svg class="w-full h-12" fill="none" viewBox="0 0 380 48" xmlns="http://www.w3.org/2000/svg">
+<!-- Hairline Axis Guides -->
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 4" stroke-width="1" x1="0" x2="380" y1="24" y2="24"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-width="1" x1="120" x2="120" y1="0" y2="48"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-width="1" x1="260" x2="260" y1="0" y2="48"></line>
+<!-- Ingress Vector Stream -->
+<path class="text-primary-container" d="M 0 38 Q 60 10, 120 24 T 240 16 T 380 32" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path class="text-secondary" d="M 0 16 Q 70 32, 140 24 T 280 34 T 380 18" fill="none" stroke="currentColor" stroke-opacity="0.85" stroke-width="1.5"></path>
+<!-- Gateway Consensus Node Highlights -->
+<circle class="text-primary" cx="120" cy="24" fill="currentColor" r="4"></circle>
+<circle class="text-secondary" cx="260" cy="20" fill="currentColor" r="4"></circle>
+<circle class="text-secondary" cx="340" cy="28" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+<!-- Real-time Verification Blocks -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded bg-surface-container flex flex-col gap-0.5">
+<span class="font-label-xs text-label-xs text-outline uppercase">Gateway State</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  ZK-Proof Enclave
+                </span>
+</div>
+<div class="p-2.5 rounded bg-surface-container flex flex-col gap-0.5">
+<span class="font-label-xs text-label-xs text-outline uppercase">Consensus Hash</span>
+<span class="font-label-sm text-label-sm text-on-surface truncate">0x9F41b...80Ac</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 Concise Pillars / Benefits -->
+<div class="space-y-space-md pt-space-xs">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-medium">Organized transactions</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Automated ledger parsing with bi-temporal transaction anchoring.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-medium">Clear financial history</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Immutable cryptographic audit trail resilient to schema drifts.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-medium">Actionable insights</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Deterministic velocity forecasts and multi-tier liquidity heatmaps.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Precision Register Form Enclave (~55% width: 7 cols on lg) -->
+<div class="lg:col-span-7 flex flex-col items-center justify-center">
+<!-- Interactive Scenario Pills Bar -->
+<div class="w-full max-w-[500px] mb-space-sm flex items-center justify-between p-1 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline px-2 uppercase tracking-wider">Preview States:</span>
+<div class="flex items-center gap-1 font-label-xs text-label-xs">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:text-primary transition-colors font-medium" id="btnStateNormal" onclick="setPreset('normal')" type="button">Normal</button>
+<button class="px-2.5 py-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="btnStateWeak" onclick="setPreset('weak')" type="button">Weak Pass</button>
+<button class="px-2.5 py-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="btnStateError" onclick="setPreset('error')" type="button">Match Error</button>
+<button class="px-2.5 py-1 rounded text-outline hover:text-secondary hover:bg-surface-container transition-colors" id="btnStateSuccess" onclick="setPreset('success')" type="button">Success</button>
+</div>
+</div>
+<!-- Registration Card Container (#121A2B tone matched via surface-container-low) -->
+<div class="w-full max-w-[500px] bg-surface-container-low rounded-xl shadow-2xl p-space-lg sm:p-space-xl flex flex-col relative">
+<!-- Global Diagnostic Feedback Alert Area -->
+<div class="hidden mb-space-md p-space-sm rounded bg-error-container/20 text-error flex items-start gap-space-xs font-label-xs text-label-xs" id="statusAlert">
+<span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">error</span>
+<div class="flex-1" id="statusAlertMessage">Passwords do not match. Verification failed.</div>
+</div>
+<!-- Card Header Section -->
+<div class="mb-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+              Create your account
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Get started with your personal financial workspace.
+            </p>
+</div>
+<!-- Registration Form Body -->
+<form class="space-y-space-md flex flex-col" id="registerForm" onsubmit="handleFormSubmit(event)">
+<!-- Full Name Input -->
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="fullName">
+                Full Name
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">person</span>
+<input class="w-full h-11 pl-10 pr-3 rounded bg-surface-container-lowest text-on-surface placeholder-outline/50 font-body-md text-body-md transition-all outline-none focus:bg-surface-container focus:shadow-[0_0_0_1px_#b5c4ff]" id="fullName" name="fullName" placeholder="Alex Chen" required="" type="text">
+</div>
+</div>
+<!-- Work Email Input -->
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="email">
+                Work Email Address
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">mail</span>
+<input class="w-full h-11 pl-10 pr-3 rounded bg-surface-container-lowest text-on-surface placeholder-outline/50 font-body-md text-body-md transition-all outline-none focus:bg-surface-container focus:shadow-[0_0_0_1px_#b5c4ff]" id="email" name="email" placeholder="alex.chen@acmecorp.io" required="" type="email">
+</div>
+</div>
+<!-- Password Input with Toggle -->
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="password">
+                Password
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">lock</span>
+<input class="w-full h-11 pl-10 pr-10 rounded bg-surface-container-lowest text-on-surface placeholder-outline/50 font-label-md text-label-md transition-all outline-none focus:bg-surface-container focus:shadow-[0_0_0_1px_#b5c4ff]" id="password" name="password" oninput="evaluatePasswordStrength(this.value)" placeholder="Enter strong passphrase" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-2.5 p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('password', 'pwdToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[18px]" id="pwdToggleIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Password Strength Indicator (4 segmented bars + Checklist) -->
+<div class="space-y-2 p-2.5 bg-surface-container-lowest/60 rounded">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline uppercase tracking-wider">Passphrase Complexity</span>
+<span class="text-outline uppercase font-medium" id="strengthLabel">None</span>
+</div>
+<!-- 4-segment Progress Bar -->
+<div class="grid grid-cols-4 gap-1.5 h-1.5">
+<div class="h-full rounded bg-surface-container-highest transition-colors duration-200" id="bar1"></div>
+<div class="h-full rounded bg-surface-container-highest transition-colors duration-200" id="bar2"></div>
+<div class="h-full rounded bg-surface-container-highest transition-colors duration-200" id="bar3"></div>
+<div class="h-full rounded bg-surface-container-highest transition-colors duration-200" id="bar4"></div>
+</div>
+<!-- Requirement Checklist Grid -->
+<div class="grid grid-cols-2 gap-1.5 pt-1 font-label-xs text-label-xs text-outline">
+<div class="flex items-center gap-1.5" id="reqLen">
+<span class="material-symbols-outlined text-[14px] text-surface-container-highest">radio_button_unchecked</span>
+<span>8+ characters</span>
+</div>
+<div class="flex items-center gap-1.5" id="reqNum">
+<span class="material-symbols-outlined text-[14px] text-surface-container-highest">radio_button_unchecked</span>
+<span>1+ number</span>
+</div>
+<div class="flex items-center gap-1.5" id="reqUpper">
+<span class="material-symbols-outlined text-[14px] text-surface-container-highest">radio_button_unchecked</span>
+<span>1+ uppercase</span>
+</div>
+<div class="flex items-center gap-1.5" id="reqSym">
+<span class="material-symbols-outlined text-[14px] text-surface-container-highest">radio_button_unchecked</span>
+<span>1+ symbol</span>
+</div>
+</div>
+</div>
+<!-- Confirm Password Input with Toggle -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="confirmPassword">
+                  Confirm Password
+                </label>
+<span class="font-label-xs text-label-xs hidden" id="matchFeedback"></span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">verified_user</span>
+<input class="w-full h-11 pl-10 pr-10 rounded bg-surface-container-lowest text-on-surface placeholder-outline/50 font-label-md text-label-md transition-all outline-none focus:bg-surface-container focus:shadow-[0_0_0_1px_#b5c4ff]" id="confirmPassword" name="confirmPassword" oninput="verifyMatch()" placeholder="Repeat passphrase" required="" type="password">
+<button aria-label="Toggle confirm password visibility" class="absolute right-2.5 p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('confirmPassword', 'confirmToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[18px]" id="confirmToggleIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Terms & Conditions Checkbox -->
+<div class="flex items-start gap-2.5 pt-1">
+<input class="mt-1 h-4 w-4 rounded bg-surface-container-lowest text-primary accent-primary cursor-pointer transition-colors" id="terms" name="terms" required="" type="checkbox">
+<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none" for="terms">
+                I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+              </label>
+</div>
+<!-- Primary Auth CTA -->
+<button class="w-full h-11 rounded bg-primary text-on-primary font-body-md text-body-md font-semibold tracking-wide flex items-center justify-center gap-2 hover:bg-primary-fixed transition-all active:scale-[0.99] shadow-md shadow-primary/10 mt-space-sm" id="submitBtn" type="submit">
+<span>Create account</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-space-lg flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+</div>
+<div class="relative px-3 bg-surface-container-low font-label-xs text-label-xs uppercase text-outline tracking-wider">
+              OR SIGN UP WITH
+            </div>
+</div>
+<!-- Secondary Google Sign-Up Button -->
+<button class="w-full h-11 rounded bg-surface-container text-on-surface font-body-md text-body-md font-medium flex items-center justify-center gap-3 hover:bg-surface-container-high transition-colors" onclick="simulateThirdPartyAuth('Google ID')" type="button">
+<!-- Clean SVG Google Icon -->
+<svg class="w-4 h-4" viewBox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5.1 3.7-8.9z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.8.7 5.5 1.9 7.8l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16.5C3.7 20.4 7.5 23.5 12 23.5z" fill="#34A853"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+<!-- Bottom Navigation Link -->
+<div class="mt-space-lg text-center font-body-md text-body-md text-on-surface-variant">
+<span>Already have an account?</span>
+<a class="text-primary hover:text-primary-fixed ml-1 font-medium hover:underline inline-flex items-center gap-0.5" href="#">
+<span>Sign in</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Success Modal Overlay (Hidden by Default) -->
+<div class="absolute inset-0 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-space-lg flex flex-col items-center justify-center text-center hidden z-20" id="successOverlay">
+<div class="w-14 h-14 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+              Registration Successful
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xs">
+              Your institutional cryptographic profile is created. Validation token dispatched to your inbox.
+            </p>
+<div class="mt-space-md p-2.5 bg-surface-container rounded w-full font-label-xs text-label-xs text-secondary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Enclave Node Synced #8472-TX</span>
+</div>
+<button class="mt-space-lg w-full h-11 rounded bg-secondary text-on-secondary font-body-md text-body-md font-semibold hover:bg-secondary-fixed transition-colors" onclick="resetRegistrationModal()" type="button">
+              Continue to Dashboard
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Validations & Scenario Engine -->
+<script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    function evaluatePasswordStrength(val) {
+      const bar1 = document.getElementById('bar1');
+      const bar2 = document.getElementById('bar2');
+      const bar3 = document.getElementById('bar3');
+      const bar4 = document.getElementById('bar4');
+      const label = document.getElementById('strengthLabel');
+
+      const reqLen = document.getElementById('reqLen');
+      const reqNum = document.getElementById('reqNum');
+      const reqUpper = document.getElementById('reqUpper');
+      const reqSym = document.getElementById('reqSym');
+
+      const hasLen = val.length >= 8;
+      const hasNum = /\d/.test(val);
+      const hasUpper = /[A-Z]/.test(val);
+      const hasSym = /[^A-Za-z0-9]/.test(val);
+
+      updateChecklistItem(reqLen, hasLen);
+      updateChecklistItem(reqNum, hasNum);
+      updateChecklistItem(reqUpper, hasUpper);
+      updateChecklistItem(reqSym, hasSym);
+
+      let score = 0;
+      if (hasLen) score++;
+      if (hasNum) score++;
+      if (hasUpper) score++;
+      if (hasSym) score++;
+
+      // Reset bars
+      [bar1, bar2, bar3, bar4].forEach(b => {
+        b.className = 'h-full rounded bg-surface-container-highest transition-colors duration-200';
+      });
+
+      if (val.length === 0) {
+        label.textContent = 'None';
+        label.className = 'text-outline uppercase font-medium';
+        verifyMatch();
+        return;
+      }
+
+      if (score === 1) {
+        label.textContent = 'Weak';
+        label.className = 'text-error uppercase font-medium';
+        bar1.classList.remove('bg-surface-container-highest');
+        bar1.classList.add('bg-error');
+      } else if (score === 2) {
+        label.textContent = 'Fair';
+        label.className = 'text-primary uppercase font-medium';
+        bar1.classList.remove('bg-surface-container-highest');
+        bar1.classList.add('bg-primary-container');
+        bar2.classList.remove('bg-surface-container-highest');
+        bar2.classList.add('bg-primary-container');
+      } else if (score === 3) {
+        label.textContent = 'Strong';
+        label.className = 'text-primary uppercase font-medium';
+        [bar1, bar2, bar3].forEach(b => {
+          b.classList.remove('bg-surface-container-highest');
+          b.classList.add('bg-primary');
+        });
+      } else if (score === 4) {
+        label.textContent = 'Optimal';
+        label.className = 'text-secondary uppercase font-medium';
+        [bar1, bar2, bar3, bar4].forEach(b => {
+          b.classList.remove('bg-surface-container-highest');
+          b.classList.add('bg-secondary');
+        });
+      }
+
+      verifyMatch();
+    }
+
+    function updateChecklistItem(elem, isValid) {
+      const icon = elem.querySelector('.material-symbols-outlined');
+      if (isValid) {
+        elem.classList.remove('text-outline');
+        elem.classList.add('text-secondary');
+        icon.textContent = 'check_circle';
+        icon.classList.remove('text-surface-container-highest');
+        icon.classList.add('text-secondary');
+      } else {
+        elem.classList.remove('text-secondary');
+        elem.classList.add('text-outline');
+        icon.textContent = 'radio_button_unchecked';
+        icon.classList.remove('text-secondary');
+        icon.classList.add('text-surface-container-highest');
+      }
+    }
+
+    function verifyMatch() {
+      const pwd = document.getElementById('password').value;
+      const confirm = document.getElementById('confirmPassword').value;
+      const feedback = document.getElementById('matchFeedback');
+
+      if (!confirm) {
+        feedback.className = 'font-label-xs text-label-xs hidden';
+        return true;
+      }
+
+      feedback.classList.remove('hidden');
+      if (pwd === confirm) {
+        feedback.textContent = 'MATCH VERIFIED';
+        feedback.className = 'font-label-xs text-label-xs text-secondary font-medium tracking-wider';
+        return true;
+      } else {
+        feedback.textContent = 'MISMATCH';
+        feedback.className = 'font-label-xs text-label-xs text-error font-medium tracking-wider';
+        return false;
+      }
+    }
+
+    function setPreset(mode) {
+      const fullName = document.getElementById('fullName');
+      const email = document.getElementById('email');
+      const pwd = document.getElementById('password');
+      const confirmPwd = document.getElementById('confirmPassword');
+      const terms = document.getElementById('terms');
+      const alertBox = document.getElementById('statusAlert');
+      const successOverlay = document.getElementById('successOverlay');
+
+      // Update button visual styles
+      ['btnStateNormal', 'btnStateWeak', 'btnStateError', 'btnStateSuccess'].forEach(id => {
+        const b = document.getElementById(id);
+        b.className = 'px-2.5 py-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors';
+      });
+
+      alertBox.classList.add('hidden');
+      successOverlay.classList.add('hidden');
+
+      if (mode === 'normal') {
+        document.getElementById('btnStateNormal').className = 'px-2.5 py-1 rounded bg-surface-container text-on-surface font-medium';
+        fullName.value = 'Alex Chen';
+        email.value = 'alex.chen@acmecorp.io';
+        pwd.value = 'Sovereign#2025Trust';
+        confirmPwd.value = 'Sovereign#2025Trust';
+        terms.checked = true;
+        evaluatePasswordStrength(pwd.value);
+      } else if (mode === 'weak') {
+        document.getElementById('btnStateWeak').className = 'px-2.5 py-1 rounded bg-surface-container text-error font-medium';
+        fullName.value = 'Jordan Miller';
+        email.value = 'jordan@capitalpartners.com';
+        pwd.value = 'secret';
+        confirmPwd.value = 'secret';
+        terms.checked = true;
+        evaluatePasswordStrength(pwd.value);
+        showAlert('Passphrase security score below institutional policy threshold (Minimum 8 chars, 1 symbol, 1 uppercase).');
+      } else if (mode === 'error') {
+        document.getElementById('btnStateError').className = 'px-2.5 py-1 rounded bg-surface-container text-error font-medium';
+        fullName.value = 'Elena Rostova';
+        email.value = 'e.rostova@quantumhedge.ch';
+        pwd.value = 'Kepler#779Node!';
+        confirmPwd.value = 'Kepler#779Wrong!';
+        terms.checked = true;
+        evaluatePasswordStrength(pwd.value);
+        showAlert('Verification mismatch: Passphrase repeat token does not conform to root input.');
+      } else if (mode === 'success') {
+        document.getElementById('btnStateSuccess').className = 'px-2.5 py-1 rounded bg-surface-container text-secondary font-medium';
+        fullName.value = 'Marcus Vance';
+        email.value = 'm.vance@sovereigntrust.com';
+        pwd.value = 'Vance&Sovereign#2025';
+        confirmPwd.value = 'Vance&Sovereign#2025';
+        terms.checked = true;
+        evaluatePasswordStrength(pwd.value);
+        successOverlay.classList.remove('hidden');
+      }
+    }
+
+    function showAlert(msg) {
+      const alertBox = document.getElementById('statusAlert');
+      const alertMsg = document.getElementById('statusAlertMessage');
+      alertMsg.textContent = msg;
+      alertBox.classList.remove('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      const confirmPwd = document.getElementById('confirmPassword').value;
+
+      if (pwd !== confirmPwd) {
+        showAlert('Passwords do not match. Verification check halted.');
+        return;
+      }
+
+      if (pwd.length < 8) {
+        showAlert('Password must contain at least 8 characters.');
+        return;
+      }
+
+      document.getElementById('statusAlert').classList.add('hidden');
+      document.getElementById('successOverlay').classList.remove('hidden');
+    }
+
+    function resetRegistrationModal() {
+      document.getElementById('successOverlay').classList.add('hidden');
+      setPreset('normal');
+    }
+
+    function simulateThirdPartyAuth(provider) {
+      showAlert(`Initiating cryptographic SSO handshake via ${provider}...`);
+      setTimeout(() => {
+        document.getElementById('statusAlert').classList.add('hidden');
+        document.getElementById('successOverlay').classList.remove('hidden');
+      }, 700);
+    }
+
+    // Default initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      setPreset('normal');
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-md px-margin-sm lg:px-margin"><div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-xs text-label-xs text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="flex h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary uppercase">HSM Node Consensus Online</span><span class="text-outline-variant">•</span><span>TLS 1.3 FIPS-140-3</span></div><div class="flex items-center gap-space-md"><span>© 2025 Sovereign Institutional Trust. All rights reserved.</span><div class="flex items-center gap-space-xs text-on-surface-variant font-label-xs text-label-xs"><span class="material-symbols-outlined text-[14px] text-primary">verified_user</span><span class="uppercase">Zero-Trust Enclave</span></div></div></div></footer></body></html>

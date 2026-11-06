@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#003d30","on-background":"#dee1f9","tertiary":"#bec6dd","error-container":"#93000a","tertiary-fixed-dim":"#bec6dd","inverse-on-surface":"#2b3041","primary":"#b5c4ff","on-error":"#690005","on-tertiary":"#283042","on-secondary-fixed":"#002018","on-primary-container":"#00236d","surface-container-highest":"#2f3446","surface-bright":"#34394a","surface-container-low":"#161b2b","surface-tint":"#b5c4ff","error":"#ffb4ab","on-tertiary-container":"#222a3b","secondary-container":"#00b290","primary-fixed-dim":"#b5c4ff","surface-variant":"#2f3446","on-surface-variant":"#c3c5d7","on-primary-fixed-variant":"#003cad","surface-container-lowest":"#080d1d","surface":"#0e1323","primary-container":"#648aff","on-primary-fixed":"#00164d","outline-variant":"#434654","primary-fixed":"#dce1ff","tertiary-container":"#8990a6","on-tertiary-fixed":"#131b2c","inverse-primary":"#1a53d6","on-primary":"#00297b","tertiary-fixed":"#dbe2fa","secondary-fixed-dim":"#4fddb8","surface-container":"#1a1f30","on-secondary":"#00382b","on-tertiary-fixed-variant":"#3f475a","inverse-surface":"#dee1f9","secondary":"#4fddb8","on-surface":"#dee1f9","secondary-fixed":"#70fad3","outline":"#8d90a0","on-error-container":"#ffdad6","background":"#0e1323","on-secondary-fixed-variant":"#005140","surface-container-high":"#25293a","surface-dim":"#0e1323"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-md":"1rem","gutter-sm":"1rem","space-lg":"1.5rem","margin-sm":"1.25rem","gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},fontFamily:{"headline-xl":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-lg":["Inter"],"label-md":["JetBrains Mono"],"label-xs":["JetBrains Mono"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"500"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between pb-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Ledgerly</span><span class="font-label-xs text-label-xs text-secondary mt-1">SYSTEM V2.4</span></div></div><span class="font-label-xs text-label-xs bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">CORE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="accounts" href="#">Accounts</a><a class="relative flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm font-medium shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)] transition-colors" data-path="transactions" href="#"><span class="font-body-md text-body-md font-medium text-on-primary-container">Transactions</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transfers" href="#">Transfers</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="categories" href="#">Categories</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports-and-analytics" href="#">Reports &amp; Analytics</a></nav><div class="pt-space-xs"><div class="px-space-sm pb-1"><span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">INTELLIGENCE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-insights" href="#">Financial Insights</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="anomaly-detection" href="#">Anomaly Detection</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ledger-integrity" href="#">Ledger Integrity</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-replay" href="#">Audit Replay</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="what-if-simulator" href="#">What-If Simulator</a></nav></div></div><div class="flex flex-col gap-space-sm px-space-md"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="help-and-support" href="#">Help &amp; Support</a></nav><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="font-label-sm text-label-sm text-primary font-bold">AR</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col min-w-0"><span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Anas R.</span><span class="font-label-xs text-label-xs text-outline truncate">anas@ledgerly.internal</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">unfold_more</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-label-xs text-label-xs text-outline uppercase">WORKSPACE</span><span class="font-label-xs text-label-xs text-outline">/</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Transactions</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-64" placeholder="Search transactions, hash, or entity..." type="text"/></div><div class="flex items-center bg-surface-container-low rounded-lg p-0.5 gap-0.5"><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">7D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container-high text-primary font-medium">30D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">90D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">Custom</button></div><button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary"></span></button><button class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div><span class="material-symbols-outlined text-outline text-[16px] pr-1">arrow_drop_down</span></button></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Environment Telemetry & State Switcher Strip -->
+<section class="w-full bg-surface-container-lowest px-space-lg py-2.5 flex flex-wrap items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-secondary tracking-wider font-semibold uppercase">NODE CLUSTER PROD // 04</span>
+</div>
+<span class="text-outline text-label-xs">|</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">shield</span>
+<span>RAFT CONSENSUS: <strong class="text-on-surface font-semibold">TLS 1.3 ACTIVE</strong></span>
+</div>
+<span class="text-outline text-label-xs hidden sm:inline">|</span>
+<div class="hidden sm:flex items-center gap-1 text-outline font-label-xs text-label-xs">
+<span>ENCLAVE: <span class="text-on-surface-variant">HSM-SECURE-LEAF-99</span></span>
+</div>
+</div>
+<!-- State Switcher Simulation Pills -->
+<div class="flex items-center gap-1 bg-surface-container p-0.5 rounded-lg">
+<span class="font-label-xs text-label-xs text-outline px-2 py-0.5 hidden md:inline">SIMULATE:</span>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all" id="btn-state-active" onclick="switchState('active')">Active Form</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="btn-state-error" onclick="switchState('error')">Validation Error</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="btn-state-submitting" onclick="switchState('submitting')">Submitting</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="btn-state-success" onclick="switchState('success')">Success Modal</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="btn-state-api-err" onclick="switchState('api-err')">API Error</button>
+</div>
+</section>
+<!-- Main Viewport Container (12-Column Desktop Grid) -->
+<div class="w-full max-w-[1360px] mx-auto px-space-md sm:px-space-lg py-space-lg flex flex-col gap-space-lg">
+<!-- Header Block & Return Navigation -->
+<header class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm group" href="#">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span>Back to Transactions</span>
+</a>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">TX-ID: PENDING-DISP</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">IMMUTABLE LOG</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pt-1">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Add Transaction</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Record verifiable corporate income or expense flow with institutional ledger integrity.</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[15px]">verified_user</span>
+<span>LEDGER STATUS: READY FOR SIGNATURE</span>
+</div>
+</div>
+</header>
+<!-- Simulated Global Alert Banner (Hidden by default, used for state simulation) -->
+<div class="hidden w-full p-space-md rounded-xl bg-error-container/20 text-on-error-container items-start gap-space-sm shadow-md" id="alert-banner">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">error</span>
+<div class="flex-1">
+<p class="font-headline-sm text-headline-sm font-semibold text-error" id="alert-title">Cluster Handshake Exception (HTTP 503)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="alert-msg">Ledger consensus node replica timeout while validating leaf attestation. Please retry or verify HSM cryptographic hardware key.</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('alert-banner').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Core Grid Layout: 8 Columns Main Form + 4 Columns Impact Ledger Summary -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / MAIN FORM COLUMN (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- CARD: Transaction Form Enclave -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl flex flex-col gap-space-lg relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- SECTION 1: Transaction Type Segmented Toggle -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Transaction Classification <span class="text-primary">*</span></label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm p-1 bg-surface-container-lowest rounded-xl">
+<!-- Income Option (Active by default) -->
+<button class="relative flex items-center justify-between p-3.5 rounded-lg bg-surface-container text-on-surface shadow-md transition-all text-left" id="btn-type-income" onclick="setTxType('income')" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary transition-colors" id="income-icon-box">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span>Income</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-secondary/15 text-secondary font-mono" id="income-badge">+ CREDIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inflow to verified ledger account</p>
+</div>
+</div>
+<div class="w-4 h-4 rounded-full bg-secondary flex items-center justify-center" id="income-radio">
+<div class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></div>
+</div>
+</button>
+<!-- Expense Option -->
+<button class="relative flex items-center justify-between p-3.5 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container/50 transition-all text-left" id="btn-type-expense" onclick="setTxType('expense')" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-outline transition-colors" id="expense-icon-box">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span>Expense</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-surface-container text-outline font-mono" id="expense-badge">- DEBIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Outflow, vendor disbursement, or cost</p>
+</div>
+</div>
+<div class="w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center" id="expense-radio">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent"></div>
+</div>
+</button>
+</div>
+</div>
+<!-- SECTION 2: Core Details (Amount, Accounts, Category) -->
+<div class="flex flex-col gap-space-md">
+<!-- Amount Input Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="tx-amount">
+<span>Gross Transaction Amount</span>
+<span class="text-secondary font-mono">*</span>
+</label>
+<span class="font-label-xs text-label-xs text-outline font-mono">CURRENCY: INR (₹)</span>
+</div>
+<div class="relative flex items-center rounded-xl bg-surface-container-lowest overflow-hidden shadow-inner group transition-all">
+<div class="flex items-center justify-center px-4 py-3 bg-surface-container text-on-surface font-label-md text-headline-sm font-semibold select-none">
+                  ₹
+                </div>
+<input class="w-full bg-transparent text-on-surface font-headline-lg text-headline-lg tracking-tight font-mono px-4 py-3 focus:outline-none placeholder:text-outline" id="tx-amount" oninput="updateAmount(this.value)" placeholder="0.00" type="text" value="35,000.00"/>
+<div class="pr-4 flex items-center gap-2">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono font-medium" id="amount-status-pill">VALIDATED</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs text-outline px-1" id="amount-hint-row">
+<span>Numeric currency input (Min ₹1.00)</span>
+<span class="text-on-surface-variant" id="amount-in-words">INR Thirty-Five Thousand Only</span>
+</div>
+<p class="hidden font-label-xs text-label-xs text-error mt-0.5" id="amount-err">Amount must be greater than zero and conform to decimal precision (e.g. 100.00)</p>
+</div>
+<!-- Two-Column: Account & Category Pickers -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Account Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Target Account <span class="text-primary">*</span></label>
+<div class="relative">
+<button class="w-full flex items-center justify-between bg-surface-container-lowest p-3 rounded-xl text-left shadow-sm hover:bg-surface-container transition-all" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Primary Account (•••• 4092)</span>
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs">
+<span class="text-outline uppercase">Current</span>
+<span class="text-secondary font-mono">₹84,200.00 Avail</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</button>
+</div>
+<span class="font-label-xs text-label-xs text-outline px-1">Settlement node enclave HDFC-CORE-01</span>
+</div>
+<!-- Category Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Classification Category <span class="text-primary">*</span></label>
+<div class="relative">
+<button class="w-full flex items-center justify-between bg-surface-container-lowest p-3 rounded-xl text-left shadow-sm hover:bg-surface-container transition-all" id="category-trigger" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary" id="category-icon-bg">
+<span class="material-symbols-outlined text-[18px]" id="category-icon">payments</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate" id="category-label">Salary &amp; Executive Remuneration</span>
+<span class="font-label-xs text-label-xs text-outline font-mono" id="category-meta">CODE: CAT-INC-8802</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</button>
+</div>
+<span class="font-label-xs text-label-xs text-outline px-1">Mapped to Indian GAAP Q4 ledger taxonomy</span>
+</div>
+</div>
+<!-- Date & Time Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Value Date Picker -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Value Date <span class="text-primary">*</span></label>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2.5 rounded-xl text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px] mr-2">calendar_today</span>
+<input class="bg-transparent font-body-md text-body-md text-on-surface focus:outline-none w-full" type="text" value="Oct 28, 2025"/>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant uppercase font-mono">TODAY</span>
+</div>
+</div>
+<!-- Execution Time -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Execution Timestamp</label>
+<span class="font-label-xs text-label-xs text-secondary font-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> AUTO-SYNCED
+                  </span>
+</div>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2.5 rounded-xl text-on-surface">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">schedule</span>
+<input class="bg-transparent font-label-md text-label-md font-mono text-on-surface focus:outline-none w-full" type="text" value="14:15:22 UTC"/>
+<span class="font-label-xs text-label-xs text-outline font-mono">NTP-SYNC</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="tx-desc">Transaction Narrative / Summary <span class="text-primary">*</span></label>
+<div class="bg-surface-container-lowest rounded-xl px-3 py-2.5 shadow-sm">
+<input class="bg-transparent font-body-md text-body-md text-on-surface focus:outline-none w-full placeholder:text-outline" id="tx-desc" placeholder="e.g., Monthly electricity bill or client retainer" type="text" value="Monthly Salary Disbursal — Q4 Compensation"/>
+</div>
+</div>
+<!-- Reference / Notes -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="tx-notes">Audit Documentation &amp; Enclave Notes</label>
+<span class="font-label-xs text-label-xs text-outline font-mono">REF: DISB-2025-10-8802</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm">
+<textarea class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none resize-none placeholder:text-outline leading-relaxed" id="tx-notes" placeholder="Add cryptographic compliance details, external routing tags, or approval tickets..." rows="3">Authorized by Corporate Treasury Dispatch Enclave (Batch #8802). Direct wire settlement to primary payroll ledger.</textarea>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Collapsible Advanced Details Accordion -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden transition-all shadow-sm">
+<button class="w-full flex items-center justify-between p-3.5 text-left hover:bg-surface-container transition-colors" onclick="toggleAccordion('advanced-drawer')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">Institutional Ledger Controls &amp; Metadata</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">OPTIONAL</span>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform" id="accordion-arrow">expand_more</span>
+</div>
+</button>
+<!-- Collapsed Drawer Content -->
+<div class="hidden px-space-md pb-space-md pt-space-xs flex flex-col gap-space-md bg-surface-container/30" id="advanced-drawer">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-2">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">External Batch ID / Counterparty Hash</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono font-label-xs text-label-xs text-on-surface flex items-center justify-between">
+<span class="truncate">0x9f8c47b201a4e589cc01e</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Settlement Consensus Scheme</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono font-label-xs text-label-xs text-on-surface flex items-center justify-between">
+<span>Raft 3-Node Enclave Consensus</span>
+<span class="text-secondary">ACTIVE</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Merkle Leaf Attestation</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono font-label-xs text-label-xs text-on-surface flex items-center justify-between">
+<span class="text-outline">Auto-generate on commit</span>
+<span class="material-symbols-outlined text-outline text-[16px]">fingerprint</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Gas / Compute Ledger Allocation</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono font-label-xs text-label-xs text-on-surface flex items-center justify-between">
+<span>Zero-Surcharge (Internal Node)</span>
+<span class="text-primary font-bold">0.00 GWEI</span>
+</div>
+</div>
+</div>
+<!-- Attachment / Receipt Dropzone -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-xs text-label-xs text-outline uppercase">Cryptographic Proof &amp; Voucher Attachment</span>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center group cursor-pointer hover:bg-surface-container transition-all">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Drop transaction proof or receipt (.pdf, .json, max 10MB)</span>
+<p class="font-label-xs text-label-xs text-outline mt-0.5">Payload will be signed into SHA-256 state tree upon save</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Form Actions Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+<span>Double-entry cryptographic note: Posted transactions are immutable upon cluster consensus.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-colors" type="button">
+                Cancel
+              </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container font-headline-sm text-headline-sm font-medium shadow-lg hover:shadow-xl active:scale-[0.99] transition-all" id="btn-submit" onclick="handleSubmit()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="submit-icon">verified</span>
+<span class="hidden w-4 h-4 border-2 border-on-primary-container border-t-transparent rounded-full animate-spin" id="submit-spinner"></span>
+<span id="submit-text">Save Transaction</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Institutional Insight / Ledger Security Footnote -->
+<div class="bg-surface-container-low/70 rounded-xl p-space-md flex items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-medium">Atomic Double-Entry Guarantees</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every transaction automatically pairs corresponding debit and credit records across sovereign ledgers.</p>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono hidden md:inline">ISO-20022 COMPLIANT</span>
+</div>
+</div>
+<!-- RIGHT COLUMN (4 Cols) — Transaction Summary & Impact Panel -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- TRANSACTION SUMMARY CARD -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">visibility</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Ledger Summary</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono tracking-wider">LIVE PREVIEW</span>
+</div>
+<!-- Impact Display Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-1.5 shadow-inner">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Calculated Net Delta</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-secondary font-mono font-bold tracking-tight" id="summary-delta">+₹35,000.00</span>
+<span class="font-label-xs text-label-xs font-mono text-outline">INR</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono font-medium" id="summary-badge">INBOUND ACCOUNT CREDIT</span>
+</div>
+</div>
+<!-- Directional Impact Breakdown Box -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase">Target Account</span>
+<span class="font-label-xs text-label-xs font-mono text-on-surface">Primary Operating (4092)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Current Settled Balance:</span>
+<span class="font-label-md text-label-md font-mono text-on-surface">₹84,200.00</span>
+</div>
+<!-- Impact Arrow & Visualization -->
+<div class="relative py-1">
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-primary/40 w-[70%]"></div>
+<div class="h-full bg-secondary w-[30%] animate-pulse" id="impact-bar"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Projected Settled Balance:</span>
+<span class="font-headline-sm text-headline-sm font-mono text-secondary font-semibold" id="summary-projected">₹1,19,200.00</span>
+</div>
+</div>
+<!-- Spec Key-Value Table -->
+<div class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<span>Classification</span>
+<span class="font-mono text-on-surface font-medium text-secondary" id="spec-type">Income (Credit)</span>
+</div>
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<span>Category</span>
+<span class="font-mono text-on-surface text-right truncate max-w-[180px]" id="spec-cat">Salary &amp; Exec Remun.</span>
+</div>
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<span>Value Date</span>
+<span class="font-mono text-on-surface">Oct 28, 2025</span>
+</div>
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<span>Execution Priority</span>
+<span class="font-mono text-on-surface">Immediate (Zero-Hop)</span>
+</div>
+<div class="flex items-center justify-between py-1 text-on-surface-variant">
+<span>Target Enclave</span>
+<span class="font-mono text-primary">HDFC-CORE-01</span>
+</div>
+</div>
+<!-- Pre-flight Validation Checklist -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest flex flex-col gap-1.5">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider mb-1">Pre-flight Node Checklist</span>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant">Valid positive INR currency</span>
+<span class="text-secondary font-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant">Active authorized node account</span>
+<span class="text-secondary font-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant">Category taxonomy mapped</span>
+<span class="text-secondary font-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant">HSM key attestation ready</span>
+<span class="text-secondary font-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> PASS</span>
+</div>
+</div>
+</div>
+<!-- QUICK ASSIGN WIDGET: Recent Categories & Quick Fill -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium uppercase tracking-wider">Quick Fill Presets</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono">RECURRING</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Preload verified metadata from previous ledger runs:</p>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="flex flex-col p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-left group" onclick="quickFill('salary')" type="button">
+<span class="font-label-xs text-label-xs text-secondary font-semibold group-hover:underline">+₹35,000</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Monthly Salary</span>
+</button>
+<button class="flex flex-col p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-left group" onclick="quickFill('aws')" type="button">
+<span class="font-label-xs text-label-xs text-primary font-semibold group-hover:underline">-₹8,400</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">AWS Cloud Cluster</span>
+</button>
+<button class="flex flex-col p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-left group" onclick="quickFill('retainer')" type="button">
+<span class="font-label-xs text-label-xs text-secondary font-semibold group-hover:underline">+₹45,000</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Client Retainer</span>
+</button>
+<button class="flex flex-col p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-left group" onclick="quickFill('supplies')" type="button">
+<span class="font-label-xs text-label-xs text-primary font-semibold group-hover:underline">-₹2,100</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Office Supplies</span>
+</button>
+</div>
+</div>
+<!-- Ledger Integrity Spec Micro-Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-center gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-on-surface font-semibold font-mono">ENCLAVE SECURED</span>
+<span class="font-label-xs text-label-xs text-secondary font-mono">SHA-256</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5">Merkle root integrity confirmed by peer cluster node.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SUCCESS MODAL (Overlay) -->
+<div class="fixed inset-0 z-50 bg-surface/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="modal-success">
+<div class="bg-surface-container-low max-w-md w-full rounded-2xl p-space-lg shadow-2xl flex flex-col gap-space-md relative overflow-hidden">
+<div class="w-14 h-14 rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center mx-auto mb-1">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<div class="text-center">
+<span class="font-label-xs text-label-xs px-2.5 py-0.5 rounded bg-secondary/10 text-secondary font-mono tracking-widest uppercase">CONSENSUS COMMITTED</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-semibold mt-2">Transaction Posted</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Transaction hash committed to Raft node log with 3/3 peer attestations.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-2 font-mono font-label-xs text-label-xs">
+<div class="flex justify-between text-on-surface-variant">
+<span>TX HASH:</span>
+<span class="text-on-surface font-semibold truncate max-w-[180px]">0x71a9...e309bf</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>AMOUNT:</span>
+<span class="text-secondary font-bold" id="modal-amount">+₹35,000.00 INR</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>NEW SETTLED BAL:</span>
+<span class="text-on-surface" id="modal-new-bal">₹1,19,200.00</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<button class="w-full py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-colors" onclick="closeSuccessModal()" type="button">
+          View Ledger
+        </button>
+<button class="w-full py-2.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container font-headline-sm text-headline-sm font-medium transition-colors" onclick="closeSuccessModal()" type="button">
+          Done
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Engine -->
+<script>
+    let currentType = 'income';
+    let baseBalance = 84200.00;
+
+    function setTxType(type) {
+      currentType = type;
+      const incomeBtn = document.getElementById('btn-type-income');
+      const expenseBtn = document.getElementById('btn-type-expense');
+      const incomeIcon = document.getElementById('income-icon-box');
+      const expenseIcon = document.getElementById('expense-icon-box');
+      const incomeRadio = document.getElementById('income-radio');
+      const expenseRadio = document.getElementById('expense-radio');
+      const incomeBadge = document.getElementById('income-badge');
+      const expenseBadge = document.getElementById('expense-badge');
+      
+      const summaryDelta = document.getElementById('summary-delta');
+      const summaryBadge = document.getElementById('summary-badge');
+      const impactBar = document.getElementById('impact-bar');
+      const specType = document.getElementById('spec-type');
+      const catLabel = document.getElementById('category-label');
+      const catIcon = document.getElementById('category-icon');
+      const catMeta = document.getElementById('category-meta');
+
+      if (type === 'income') {
+        incomeBtn.className = "relative flex items-center justify-between p-3.5 rounded-lg bg-surface-container text-on-surface shadow-md transition-all text-left";
+        expenseBtn.className = "relative flex items-center justify-between p-3.5 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container/50 transition-all text-left";
+        
+        incomeIcon.className = "w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary transition-colors";
+        expenseIcon.className = "w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-outline transition-colors";
+        
+        incomeRadio.className = "w-4 h-4 rounded-full bg-secondary flex items-center justify-center";
+        incomeRadio.firstElementChild.className = "w-1.5 h-1.5 rounded-full bg-surface-container-lowest";
+        
+        expenseRadio.className = "w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center";
+        expenseRadio.firstElementChild.className = "w-1.5 h-1.5 rounded-full bg-transparent";
+
+        incomeBadge.className = "font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-secondary/15 text-secondary font-mono";
+        expenseBadge.className = "font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-surface-container text-outline font-mono";
+
+        summaryDelta.className = "font-headline-xl text-headline-xl text-secondary font-mono font-bold tracking-tight";
+        summaryBadge.className = "font-label-xs text-label-xs px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono font-medium";
+        summaryBadge.innerText = "INBOUND ACCOUNT CREDIT";
+        impactBar.className = "h-full bg-secondary w-[30%] animate-pulse";
+        specType.className = "font-mono text-secondary font-medium";
+        specType.innerText = "Income (Credit)";
+
+        catLabel.innerText = "Salary & Executive Remuneration";
+        catIcon.innerText = "payments";
+        catMeta.innerText = "CODE: CAT-INC-8802";
+      } else {
+        expenseBtn.className = "relative flex items-center justify-between p-3.5 rounded-lg bg-surface-container text-on-surface shadow-md transition-all text-left";
+        incomeBtn.className = "relative flex items-center justify-between p-3.5 rounded-lg bg-transparent text-on-surface-variant hover:bg-surface-container/50 transition-all text-left";
+        
+        expenseIcon.className = "w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary transition-colors";
+        incomeIcon.className = "w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-outline transition-colors";
+        
+        expenseRadio.className = "w-4 h-4 rounded-full bg-primary flex items-center justify-center";
+        expenseRadio.firstElementChild.className = "w-1.5 h-1.5 rounded-full bg-surface-container-lowest";
+        
+        incomeRadio.className = "w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center";
+        incomeRadio.firstElementChild.className = "w-1.5 h-1.5 rounded-full bg-transparent";
+
+        expenseBadge.className = "font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-primary/20 text-primary font-mono";
+        incomeBadge.className = "font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-surface-container text-outline font-mono";
+
+        summaryDelta.className = "font-headline-xl text-headline-xl text-primary font-mono font-bold tracking-tight";
+        summaryBadge.className = "font-label-xs text-label-xs px-2 py-0.5 rounded bg-primary/15 text-primary font-mono font-medium";
+        summaryBadge.innerText = "OUTBOUND ACCOUNT DEBIT";
+        impactBar.className = "h-full bg-primary w-[30%]";
+        specType.className = "font-mono text-primary font-medium";
+        specType.innerText = "Expense (Debit)";
+
+        catLabel.innerText = "Server & Cloud Infrastructure";
+        catIcon.innerText = "dns";
+        catMeta.innerText = "CODE: CAT-EXP-4011";
+      }
+      recalculate();
+    }
+
+    function updateAmount(val) {
+      recalculate();
+    }
+
+    function recalculate() {
+      const rawVal = document.getElementById('tx-amount').value.replace(/,/g, '');
+      const num = parseFloat(rawVal) || 0;
+      const prefix = currentType === 'income' ? '+' : '-';
+      
+      const formatted = num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('summary-delta').innerText = `${prefix}₹${formatted}`;
+      
+      let proj = currentType === 'income' ? (baseBalance + num) : (baseBalance - num);
+      if (proj < 0) proj = 0;
+      document.getElementById('summary-projected').innerText = `₹${proj.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      
+      const modalAmt = document.getElementById('modal-amount');
+      if (modalAmt) modalAmt.innerText = `${prefix}₹${formatted} INR`;
+      const modalBal = document.getElementById('modal-new-bal');
+      if (modalBal) modalBal.innerText = `₹${proj.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      const arrow = document.getElementById('accordion-arrow');
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        arrow.style.transform = 'rotate(180deg)';
+      } else {
+        el.classList.add('hidden');
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function quickFill(preset) {
+      if (preset === 'salary') {
+        setTxType('income');
+        document.getElementById('tx-amount').value = '35,000.00';
+        document.getElementById('tx-desc').value = 'Monthly Salary Disbursal — Q4 Compensation';
+        document.getElementById('spec-cat').innerText = 'Salary & Exec Remun.';
+      } else if (preset === 'aws') {
+        setTxType('expense');
+        document.getElementById('tx-amount').value = '8,400.00';
+        document.getElementById('tx-desc').value = 'AWS Cloud Infrastructure — Mumbai Region';
+        document.getElementById('spec-cat').innerText = 'Server & Infra';
+      } else if (preset === 'retainer') {
+        setTxType('income');
+        document.getElementById('tx-amount').value = '45,000.00';
+        document.getElementById('tx-desc').value = 'Strategic Consulting Retainer — Horizon Alpha';
+        document.getElementById('spec-cat').innerText = 'Client Retainer';
+      } else if (preset === 'supplies') {
+        setTxType('expense');
+        document.getElementById('tx-amount').value = '2,100.00';
+        document.getElementById('tx-desc').value = 'Executive Boardroom Supplies & Consumables';
+        document.getElementById('spec-cat').innerText = 'Office Supplies';
+      }
+      recalculate();
+    }
+
+    function handleSubmit() {
+      const btn = document.getElementById('btn-submit');
+      const icon = document.getElementById('submit-icon');
+      const spinner = document.getElementById('submit-spinner');
+      const txt = document.getElementById('submit-text');
+      
+      icon.classList.add('hidden');
+      spinner.classList.remove('hidden');
+      txt.innerText = 'Verifying Consensus...';
+      
+      setTimeout(() => {
+        spinner.classList.add('hidden');
+        icon.classList.remove('hidden');
+        txt.innerText = 'Save Transaction';
+        document.getElementById('modal-success').classList.remove('hidden');
+      }, 900);
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('modal-success').classList.add('hidden');
+    }
+
+    function switchState(stateName) {
+      const banner = document.getElementById('alert-banner');
+      const amtErr = document.getElementById('amount-err');
+      const modal = document.getElementById('modal-success');
+      const btn = document.getElementById('btn-submit');
+      const icon = document.getElementById('submit-icon');
+      const spinner = document.getElementById('submit-spinner');
+      const txt = document.getElementById('submit-text');
+
+      banner.classList.add('hidden');
+      amtErr.classList.add('hidden');
+      modal.classList.add('hidden');
+      icon.classList.remove('hidden');
+      spinner.classList.add('hidden');
+      txt.innerText = 'Save Transaction';
+
+      const pillIds = ['btn-state-active', 'btn-state-error', 'btn-state-submitting', 'btn-state-success', 'btn-state-api-err'];
+      pillIds.forEach(id => {
+        const el = document.getElementById(id);
+        el.className = "px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all";
+      });
+
+      if (stateName === 'active') {
+        document.getElementById('btn-state-active').className = "px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all";
+      } else if (stateName === 'error') {
+        document.getElementById('btn-state-error').className = "px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all";
+        amtErr.classList.remove('hidden');
+      } else if (stateName === 'submitting') {
+        document.getElementById('btn-state-submitting').className = "px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all";
+        icon.classList.add('hidden');
+        spinner.classList.remove('hidden');
+        txt.innerText = 'Attesting Raft Nodes...';
+      } else if (stateName === 'success') {
+        document.getElementById('btn-state-success').className = "px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all";
+        modal.classList.remove('hidden');
+      } else if (stateName === 'api-err') {
+        document.getElementById('btn-state-api-err').className = "px-2 py-1 rounded text-label-xs font-label-xs bg-primary-container text-on-primary-container font-medium transition-all";
+        banner.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</div></main></div></body></html>

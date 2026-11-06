@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#003d30","on-background":"#dee1f9","tertiary":"#bec6dd","error-container":"#93000a","tertiary-fixed-dim":"#bec6dd","inverse-on-surface":"#2b3041","primary":"#b5c4ff","on-error":"#690005","on-tertiary":"#283042","on-secondary-fixed":"#002018","on-primary-container":"#00236d","surface-container-highest":"#2f3446","surface-bright":"#34394a","surface-container-low":"#161b2b","surface-tint":"#b5c4ff","error":"#ffb4ab","on-tertiary-container":"#222a3b","secondary-container":"#00b290","primary-fixed-dim":"#b5c4ff","surface-variant":"#2f3446","on-surface-variant":"#c3c5d7","on-primary-fixed-variant":"#003cad","surface-container-lowest":"#080d1d","surface":"#0e1323","primary-container":"#648aff","on-primary-fixed":"#00164d","outline-variant":"#434654","primary-fixed":"#dce1ff","tertiary-container":"#8990a6","on-tertiary-fixed":"#131b2c","inverse-primary":"#1a53d6","on-primary":"#00297b","tertiary-fixed":"#dbe2fa","secondary-fixed-dim":"#4fddb8","surface-container":"#1a1f30","on-secondary":"#00382b","on-tertiary-fixed-variant":"#3f475a","inverse-surface":"#dee1f9","secondary":"#4fddb8","on-surface":"#dee1f9","secondary-fixed":"#70fad3","outline":"#8d90a0","on-error-container":"#ffdad6","background":"#0e1323","on-secondary-fixed-variant":"#005140","surface-container-high":"#25293a","surface-dim":"#0e1323"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-md":"1rem","gutter-sm":"1rem","space-lg":"1.5rem","margin-sm":"1.25rem","gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},fontFamily:{"headline-xl":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-xl-mobile":["Inter"],"body-lg":["Inter"],"label-md":["JetBrains Mono"],"label-xs":["JetBrains Mono"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"500"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between pb-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Ledgerly</span><span class="font-label-xs text-label-xs text-secondary mt-1">SYSTEM V2.4</span></div></div><span class="font-label-xs text-label-xs bg-surface-container-high text-on-surface-variant px-1.5 py-0.5 rounded">CORE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#">Dashboard</a><a class="relative flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm font-medium shadow-[0_0_20px_-4px_rgba(79,124,255,0.25)] transition-colors" data-path="accounts" href="#"><span class="font-body-md text-body-md font-medium text-on-primary-container">Accounts</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transactions" href="#">Transactions</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="transfers" href="#">Transfers</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="categories" href="#">Categories</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports-and-analytics" href="#">Reports &amp; Analytics</a></nav><div class="pt-space-xs"><div class="px-space-sm pb-1"><span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">INTELLIGENCE</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-insights" href="#">Financial Insights</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="anomaly-detection" href="#">Anomaly Detection</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ledger-integrity" href="#">Ledger Integrity</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-replay" href="#">Audit Replay</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="what-if-simulator" href="#">What-If Simulator</a></nav></div></div><div class="flex flex-col gap-space-sm px-space-md"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm font-medium rounded-lg"><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#">Settings</a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="help-and-support" href="#">Help &amp; Support</a></nav><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><div class="relative"><div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="font-label-sm text-label-sm text-primary font-bold">AR</span></div><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col min-w-0"><span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Anas R.</span><span class="font-label-xs text-label-xs text-outline truncate">anas@ledgerly.internal</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">unfold_more</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-label-xs text-label-xs text-outline uppercase">WORKSPACE</span><span class="font-label-xs text-label-xs text-outline">/</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Accounts</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-56" placeholder="Search account, identifier..." type="text"/></div><div class="flex items-center bg-surface-container-low rounded-lg p-0.5 gap-0.5"><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">7D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container-high text-primary font-medium">30D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">90D</button><button class="px-2 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface">Custom</button></div><button class="relative p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary"></span></button><button class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div><span class="material-symbols-outlined text-outline text-[16px] pr-1">arrow_drop_down</span></button></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1440px] w-full mx-auto">
+<!-- State Simulation Strip (QA Switcher) -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-wrap items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-xs text-label-xs text-secondary font-medium tracking-wide">SYSTEM TELEMETRY: TLS 1.3 / ENCLAVE SECURE</span>
+<span class="font-label-xs text-label-xs text-outline px-1.5 py-0.5 bg-surface-container rounded">LIVE RPC</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container rounded-lg p-1">
+<span class="font-label-xs text-label-xs text-outline mr-2 px-1">VIEWPORT SIMULATION:</span>
+<button class="px-2.5 py-1 rounded text-label-xs font-label-xs bg-primary text-on-primary transition-all" id="view-normal-btn" onclick="switchState('normal')">Normal View</button>
+<button class="px-2.5 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="view-modal-btn" onclick="openAddAccountModal()">+ Add Modal</button>
+<button class="px-2.5 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="view-grid-btn" onclick="toggleLayoutView('grid')">Card Grid</button>
+<button class="px-2.5 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="view-empty-btn" onclick="switchState('empty')">Empty State</button>
+<button class="px-2.5 py-1 rounded text-label-xs font-label-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" id="view-error-btn" onclick="switchState('error')">API Error</button>
+</div>
+</div>
+<!-- Page Header & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Accounts</h1>
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-surface-container text-secondary font-medium">HSM NODE 01</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your corporate accounts and monitor your consolidated treasury balance.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-body-sm transition-all shadow-sm" onclick="downloadCSVReport()">
+<span class="material-symbols-outlined text-[18px] text-tertiary">download</span>
+<span>Statement</span>
+</button>
+<button class="flex items-center gap-space-xs px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-body-sm transition-all shadow-sm" onclick="inspectAccountDrawer('Primary Account', '•••• 4092', '₹84,200.00', 'Current', 'Operating Ledger Node')">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span>Limits &amp; Rules</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary text-body-md font-body-md font-medium transition-all shadow-[0_0_24px_-4px_rgba(79,124,255,0.4)] active:scale-[0.98]" onclick="openAddAccountModal()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Account</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Strip -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">TOTAL ACCOUNTS:</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold" id="telemetry-total-acc">3</span>
+</div>
+<div class="h-3 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">ACTIVE NODES:</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold" id="telemetry-active-acc">3 ACTIVE</span>
+</div>
+<div class="h-3 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CONSOLIDATED:</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">₹1,24,850.00</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+<span>Reconciliation Sync: Just now (Oct 28, 2025, 09:42 UTC) • TLS 1.3 Verified</span>
+</div>
+</div>
+<!-- Account Summary Metric Cards (3-Column Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Metric 1: Total Balance -->
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">CONSOLIDATED TREASURY</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">₹1,24,850.00</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low/50 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-secondary font-label-xs text-label-xs font-medium">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12.4% vs last cycle</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">Across all 3 accounts</span>
+</div>
+</div>
+<!-- Metric 2: Active Accounts -->
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">LEDGER STATE</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">3 / 3</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Online</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">dns</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low/50 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-secondary font-label-xs text-label-xs font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>100% Operational Nodes</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">0 Flagged</span>
+</div>
+</div>
+<!-- Metric 3: Latest Settlement -->
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">LATEST SETTLEMENT</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Oct 28, 2025</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">sync_saved_locally</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low/50 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-xs text-label-xs truncate max-w-[200px]">
+<span class="font-medium text-error">-₹1,250.00</span>
+<span class="truncate">Grocery Store (POS)</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded font-medium">Reconciled</span>
+</div>
+</div>
+</div>
+<!-- Normal Data View Container (Table / Grid) -->
+<div class="flex flex-col gap-space-md" id="main-content-view">
+<!-- Toolbar & Filters -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">All Accounts</h2>
+<span class="px-2.5 py-0.5 rounded-full text-label-xs font-label-xs bg-surface-container-high text-primary font-medium">3 Active Enclaves</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Live Search Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-3 py-2 rounded-lg flex-1 sm:w-64">
+<span class="material-symbols-outlined text-outline text-[18px]">search</span>
+<input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none w-full" id="account-search-input" oninput="filterAccountsList()" placeholder="Search account, ID, type..." type="text"/>
+</div>
+<!-- Type Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-body-sm font-body-sm text-on-surface px-3 py-2 pr-8 rounded-lg focus:outline-none cursor-pointer" id="type-filter" onchange="filterAccountsList()">
+<option value="all">All Types</option>
+<option value="Current">Current Accounts</option>
+<option value="Savings">Savings Reserve</option>
+<option value="Wallet">Digital Wallets</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[16px] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-body-sm font-body-sm text-on-surface px-3 py-2 pr-8 rounded-lg focus:outline-none cursor-pointer" id="status-filter" onchange="filterAccountsList()">
+<option value="all">Status: All</option>
+<option value="Active">Active Nodes</option>
+<option value="Synced">Sync Verified</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[16px] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Sort Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-body-sm font-body-sm text-on-surface px-3 py-2 pr-8 rounded-lg focus:outline-none cursor-pointer" id="sort-filter" onchange="filterAccountsList()">
+<option value="desc">Sort: Balance (High to Low)</option>
+<option value="asc">Sort: Balance (Low to High)</option>
+<option value="name">Sort: Account Name</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[16px] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">swap_vert</span>
+</div>
+<!-- View Mode Toggle -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-0.5 ml-auto sm:ml-0">
+<button class="p-1.5 rounded text-primary bg-surface-container-high transition-colors" id="btn-toggle-list" onclick="toggleLayoutView('list')" title="List View">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button class="p-1.5 rounded text-outline hover:text-on-surface transition-colors" id="btn-toggle-grid" onclick="toggleLayoutView('grid')" title="Grid View">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TABLE VIEW -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-md flex flex-col" id="table-view-wrapper">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-label-xs font-label-xs text-outline tracking-wider uppercase">
+<th class="py-3 px-space-md font-medium">Account Details</th>
+<th class="py-3 px-space-md font-medium">Type</th>
+<th class="py-3 px-space-md font-medium">Identifier / Vault</th>
+<th class="py-3 px-space-md font-medium text-right">Balance (INR)</th>
+<th class="py-3 px-space-md font-medium">State</th>
+<th class="py-3 px-space-md font-medium">Last Reconciled</th>
+<th class="py-3 px-space-md font-medium text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm" id="accounts-table-body">
+<!-- Row 1: Primary Account -->
+<tr class="account-row hover:bg-surface-container-high/60 transition-colors" data-balance="84200" data-name="Primary Account" data-type="Current">
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Primary Account</span>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-primary/10 text-primary font-medium">Operating</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline truncate">Primary Operating Node • HDFC Core</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">Current</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">•••• 4092</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="copyToClipboard('HDFC-0092-4092')" title="Copy identifier">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">₹84,200.00</span>
+<div class="font-label-xs text-label-xs text-secondary mt-0.5">Available Limit: 100%</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Active Node</span>
+</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface">Today, 08:30 AM</span>
+<span class="font-label-xs text-label-xs text-outline">Auto-polling block #9421</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container-high transition-colors" onclick="inspectAccountDrawer('Primary Account', '•••• 4092', '₹84,200.00', 'Current', 'Operating Ledger Node')" title="Inspect Ledger Details">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="showQuickAlert('Opening transaction journal for Primary Account...')" title="View Ledger Transactions">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="openEditAccount('Primary Account', 'Current', '84200.00', 'Operating Ledger Node')" title="Edit Parameters">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors relative" onclick="toggleRowMenu('menu-row-1')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-high rounded-lg shadow-xl p-1 z-30 text-left" id="menu-row-1">
+<a class="block px-3 py-1.5 text-body-sm text-on-surface hover:bg-surface-container rounded" href="javascript:void(0)" onclick="inspectAccountDrawer('Primary Account', '•••• 4092', '₹84,200.00', 'Current', 'Operating Ledger Node')">Inspect Audit Record</a>
+<a class="block px-3 py-1.5 text-body-sm text-error hover:bg-surface-container rounded" href="javascript:void(0)" onclick="showQuickAlert('Freezing account operations temporarily.')">Freeze Account</a>
+</div>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Savings Account -->
+<tr class="account-row hover:bg-surface-container-high/60 transition-colors" data-balance="36150" data-name="Savings Account" data-type="Savings">
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Savings Account</span>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">Yield Reserve</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline truncate">Treasury Buffer • 6.8% APY Staking</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">Savings</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">•••• 8812</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="copyToClipboard('ICICI-8812-0043')" title="Copy identifier">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">₹36,150.00</span>
+<div class="font-label-xs text-label-xs text-secondary mt-0.5">+₹142.10 acc. yield</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Sync OK</span>
+</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface">Yesterday, 14:15 PM</span>
+<span class="font-label-xs text-label-xs text-outline">Verified cryptographically</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container-high transition-colors" onclick="inspectAccountDrawer('Savings Account', '•••• 8812', '₹36,150.00', 'Savings', 'Treasury Buffer Reserve')" title="Inspect Ledger Details">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="showQuickAlert('Opening transaction journal for Savings Account...')" title="View Ledger Transactions">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="openEditAccount('Savings Account', 'Savings', '36150.00', 'Treasury Buffer Reserve')" title="Edit Parameters">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors relative" onclick="toggleRowMenu('menu-row-2')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-high rounded-lg shadow-xl p-1 z-30 text-left" id="menu-row-2">
+<a class="block px-3 py-1.5 text-body-sm text-on-surface hover:bg-surface-container rounded" href="javascript:void(0)" onclick="inspectAccountDrawer('Savings Account', '•••• 8812', '₹36,150.00', 'Savings', 'Treasury Buffer Reserve')">Inspect Audit Record</a>
+<a class="block px-3 py-1.5 text-body-sm text-outline hover:bg-surface-container rounded" href="javascript:void(0)" onclick="showQuickAlert('Archiving this savings vault.')">Archive Account</a>
+</div>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Cash Wallet -->
+<tr class="account-row hover:bg-surface-container-high/60 transition-colors" data-balance="4500" data-name="Cash Wallet" data-type="Wallet">
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Cash Wallet</span>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-tertiary-container/30 text-tertiary font-medium">Petty Cash</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline truncate">On-Demand Corporate Disbursements</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">Wallet</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">•••• 1044</span>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="copyToClipboard('WAL-1044-PETTY')" title="Copy identifier">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">₹4,500.00</span>
+<div class="font-label-xs text-label-xs text-outline mt-0.5">Threshold: ₹10,000</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Ready</span>
+</span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface">Oct 19, 2025</span>
+<span class="font-label-xs text-label-xs text-outline">Direct ledger debit</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container-high transition-colors" onclick="inspectAccountDrawer('Cash Wallet', '•••• 1044', '₹4,500.00', 'Wallet', 'On-Demand Corporate Petty Cash')" title="Inspect Ledger Details">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="showQuickAlert('Opening transaction journal for Cash Wallet...')" title="View Ledger Transactions">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="openEditAccount('Cash Wallet', 'Wallet', '4500.00', 'On-Demand Corporate Petty Cash')" title="Edit Parameters">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors relative" onclick="toggleRowMenu('menu-row-3')">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-high rounded-lg shadow-xl p-1 z-30 text-left" id="menu-row-3">
+<a class="block px-3 py-1.5 text-body-sm text-on-surface hover:bg-surface-container rounded" href="javascript:void(0)" onclick="inspectAccountDrawer('Cash Wallet', '•••• 1044', '₹4,500.00', 'Wallet', 'On-Demand Corporate Petty Cash')">Inspect Audit Record</a>
+<a class="block px-3 py-1.5 text-body-sm text-error hover:bg-surface-container rounded" href="javascript:void(0)" onclick="showQuickAlert('Closing cash petty wallet.')">Close Wallet</a>
+</div>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination / Aggregation -->
+<div class="bg-surface-container-low px-space-md py-3 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm font-label-xs text-label-xs text-outline">
+<span>Showing <strong class="text-on-surface">3</strong> of 3 accounts</span>
+<span>•</span>
+<span>Aggregated Node Latency: <strong class="text-secondary">14ms</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-outline">Export:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-label-xs font-label-xs transition-colors" onclick="downloadCSVReport()">CSV</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-label-xs font-label-xs transition-colors" onclick="showQuickAlert('Generating cryptographic JSON ledger report...')">JSON-LD</button>
+</div>
+</div>
+</div>
+<!-- GRID CARDS VIEW (Initially Hidden or toggled via switch) -->
+<div class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md" id="grid-view-wrapper">
+<!-- Card 1 -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Active</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Primary Account</h3>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-primary/10 text-primary">Current</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Primary Operating Node • HDFC Core</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase">Identifier</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">•••• 4092</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Balance</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹84,200.00</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="inspectAccountDrawer('Primary Account', '•••• 4092', '₹84,200.00', 'Current', 'Operating Ledger Node')">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Active</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Savings Account</h3>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-secondary/10 text-secondary">Savings</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Yield Reserve • ICICI Staking Enclave</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase">Identifier</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">•••• 8812</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Balance</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹36,150.00</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="inspectAccountDrawer('Savings Account', '•••• 8812', '₹36,150.00', 'Savings', 'Treasury Buffer Reserve')">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Active</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cash Wallet</h3>
+<span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-tertiary-container/30 text-tertiary">Wallet</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Disbursements • On-Demand Petty Cash</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase">Identifier</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">•••• 1044</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Balance</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹4,500.00</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="inspectAccountDrawer('Cash Wallet', '•••• 1044', '₹4,500.00', 'Wallet', 'On-Demand Corporate Petty Cash')">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- EMPTY ACCOUNTS STATE (Simulation view) -->
+<div class="hidden bg-surface-container rounded-xl p-space-xl flex flex-col items-center justify-center text-center shadow-md" id="empty-state-view">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center text-outline mb-space-md">
+<span class="material-symbols-outlined text-[36px]">account_balance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">No Accounts Initialized</h3>
+<p class="font-body-md text-body-md text-outline max-w-md mb-space-lg">Your institutional ledger has no active or provisioned accounts. Deploy your first cryptographic treasury enclave to begin monitoring transactions.</p>
+<button class="flex items-center gap-space-xs px-5 py-2.5 rounded-lg bg-primary text-on-primary text-body-md font-body-md font-medium shadow-[0_0_24px_-4px_rgba(79,124,255,0.4)] hover:bg-primary-fixed-dim transition-all" onclick="openAddAccountModal()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Deploy First Account</span>
+</button>
+</div>
+<!-- API ERROR STATE (Simulation view) -->
+<div class="hidden bg-surface-container rounded-xl p-space-xl flex flex-col items-center justify-center text-center shadow-md" id="error-state-view">
+<div class="w-16 h-16 rounded-2xl bg-error-container/20 flex items-center justify-center text-error mb-space-md">
+<span class="material-symbols-outlined text-[36px]">sync_problem</span>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-xs text-label-xs text-error font-medium uppercase px-2 py-0.5 bg-error-container/30 rounded">RPC DISCONNECTED</span>
+<span class="font-label-xs text-label-xs text-outline">HTTP 503 GATEWAY TIMEOUT</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">Failed to Fetch Accounts Consensus</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-space-lg">The Ledgerly secure RPC node was unable to reach consensus on your cryptographic cluster balances. Ensure local HSM credentials match.</p>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-primary text-on-primary text-body-md font-body-md font-medium hover:bg-primary-fixed-dim transition-all" onclick="switchState('normal')">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Retry Handshake</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-high text-on-surface text-body-sm font-body-sm hover:bg-surface-container-highest transition-all" onclick="showQuickAlert('Telemetry logs downloaded for diagnostics.')">
+          Export Trace Logs
+        </button>
+</div>
+</div>
+</div>
+<!-- ADD ACCOUNT MODAL OVERLAY -->
+<div class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-md" id="add-account-modal">
+<div class="bg-surface-container w-full max-w-lg rounded-xl shadow-2xl flex flex-col overflow-hidden relative animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">add_card</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Add New Account</h3>
+<span class="font-label-xs text-label-xs text-outline">Provision ledger node with custom parameters</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="closeAddAccountModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg flex flex-col gap-space-md" id="create-account-form" onsubmit="handleCreateAccount(event)">
+<!-- Field 1: Account Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider flex items-center justify-between">
+<span>Account Name</span>
+<span class="text-error">* Required</span>
+</label>
+<input class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md px-3.5 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-outline/60" id="new-acc-name" placeholder="e.g. Treasury Reserve Account" required="" type="text"/>
+</div>
+<!-- Field 2: Account Type -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Account Type</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest text-on-surface text-body-md font-body-md px-3.5 py-2.5 pr-10 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="new-acc-type">
+<option value="Current">Current / Operating Account</option>
+<option value="Savings">High-Yield Savings Reserve</option>
+<option value="Wallet">Digital Cash Wallet</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[18px] absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Field 3: Currency & Opening Balance -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Currency</label>
+<div class="bg-surface-container-lowest text-on-surface-variant text-body-md font-body-md px-3.5 py-2.5 rounded-lg flex items-center justify-between cursor-not-allowed">
+<span class="font-medium text-on-surface">INR (₹) - Indian Rupee</span>
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Opening Balance</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-outline font-label-md">₹</span>
+<input class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md pl-8 pr-3.5 py-2.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-outline/60" id="new-acc-balance" min="0" placeholder="0.00" step="0.01" type="number"/>
+</div>
+</div>
+</div>
+<!-- Field 4: Description (Optional) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Internal Description / Memo (Optional)</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md px-3.5 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-outline/60 resize-none" id="new-acc-desc" placeholder="e.g. Reserved for Q4 hardware deployment and node liquidity..." rows="2"></textarea>
+</div>
+<!-- Security Notice -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">shield</span>
+<p class="font-label-xs text-label-xs text-outline leading-tight">By deploying this account node, Ledgerly creates an immutable zero-knowledge identifier on your private ledger cluster with dual-key multi-signature signing.</p>
+</div>
+<!-- Actions -->
+<div class="mt-space-sm flex items-center justify-end gap-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright text-body-md font-body-md transition-colors" onclick="closeAddAccountModal()" type="button">
+            Cancel
+          </button>
+<button class="flex items-center gap-1.5 px-5 py-2 rounded-lg bg-primary text-on-primary text-body-md font-body-md font-medium shadow-[0_0_20px_-4px_rgba(79,124,255,0.3)] hover:bg-primary-fixed-dim transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>+ Create Account</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- INSPECT ACCOUNT SIDE DRAWER -->
+<div class="fixed inset-y-0 right-0 w-full max-w-md bg-surface-container shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto" id="account-inspector-drawer">
+<div>
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">account_tree</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="drawer-acc-title">Account Detail</h3>
+<span class="font-label-xs text-label-xs text-secondary font-mono" id="drawer-acc-id">•••• 0000</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container transition-colors" onclick="closeAccountDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- Balance Showcase -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CONSOLIDATED SETTLED BALANCE</span>
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold" id="drawer-acc-balance">₹0.00</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">HSM Signed</span>
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant font-medium" id="drawer-acc-badge">Current</span>
+</div>
+</div>
+<!-- Ledger Specs Grid -->
+<div class="flex flex-col gap-2">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">LEDGER ATTRIBUTES</span>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col divide-y divide-surface-container-high/40 text-body-sm font-body-sm">
+<div class="py-2.5 px-2 flex items-center justify-between">
+<span class="text-outline">Purpose</span>
+<span class="text-on-surface font-medium" id="drawer-acc-purpose">Operating Ledger Node</span>
+</div>
+<div class="py-2.5 px-2 flex items-center justify-between">
+<span class="text-outline">Daily Outflow Limit</span>
+<span class="text-on-surface font-medium">₹5,00,000.00</span>
+</div>
+<div class="py-2.5 px-2 flex items-center justify-between">
+<span class="text-outline">Consensus Protocol</span>
+<span class="text-secondary font-mono text-label-xs">RAFT-RAFT-3NODES</span>
+</div>
+<div class="py-2.5 px-2 flex items-center justify-between">
+<span class="text-outline">Ledger Enclave ID</span>
+<span class="text-primary font-mono text-label-xs">0x7F2A...E9C1</span>
+</div>
+</div>
+</div>
+<!-- Quick Actions Inside Drawer -->
+<div class="flex flex-col gap-2">
+<span class="font-label-xs text-label-xs text-outline tracking-wider uppercase">OPERATIONAL CONTROLS</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 p-3 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-body-sm transition-colors" onclick="showQuickAlert('Opening transactions stream for selected account...')">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+<span>Ledger Trail</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 p-3 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-body-sm font-body-sm transition-colors" onclick="showQuickAlert('Exporting signed audit proof PDF...')">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>Audit Proof</span>
+</button>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="bg-error-container/10 rounded-xl p-space-md flex flex-col gap-2">
+<span class="font-label-xs text-label-xs text-error uppercase font-medium">RESTRICTED ZONE</span>
+<p class="font-body-sm text-body-sm text-outline">Archiving or freezing this account terminates active automated scheduled transfers.</p>
+<button class="mt-2 w-full py-2 px-3 rounded-lg bg-error-container/30 hover:bg-error-container/50 text-error font-body-sm font-medium transition-colors text-center" onclick="showQuickAlert('Account operation lock triggered. Confirm via hardware key.')">
+            Freeze Account Operations
+          </button>
+</div>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">TLS Session Encrypted</span>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm transition-colors" onclick="closeAccountDrawer()">
+        Dismiss
+      </button>
+</div>
+</div>
+<!-- FLOATING QUICK TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 bg-surface-container-highest text-on-surface px-4 py-3 rounded-xl shadow-2xl flex items-center gap-space-sm z-50 transform translate-y-24 opacity-0 transition-all duration-200" id="quick-toast">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm" id="quick-toast-msg">Action executed successfully.</span>
+</div>
+</div>
+<script>
+  // UI State Switcher for Previewing Different Screens
+  function switchState(state) {
+    const mainView = document.getElementById('main-content-view');
+    const emptyView = document.getElementById('empty-state-view');
+    const errorView = document.getElementById('error-state-view');
+    const modal = document.getElementById('add-account-modal');
+    
+    // Reset view visibility
+    mainView.classList.add('hidden');
+    emptyView.classList.add('hidden');
+    errorView.classList.add('hidden');
+    modal.classList.add('hidden');
+
+    // Update Telemetry Bar Status
+    const totalEl = document.getElementById('telemetry-total-acc');
+    const activeEl = document.getElementById('telemetry-active-acc');
+
+    if (state === 'normal') {
+      mainView.classList.remove('hidden');
+      totalEl.textContent = '3';
+      activeEl.textContent = '3 ACTIVE';
+    } else if (state === 'empty') {
+      emptyView.classList.remove('hidden');
+      totalEl.textContent = '0';
+      activeEl.textContent = '0 ACTIVE';
+    } else if (state === 'error') {
+      errorView.classList.remove('hidden');
+      totalEl.textContent = 'SYNC FAULT';
+      activeEl.textContent = 'DISCONNECTED';
+    }
+  }
+
+  // Toggle View Mode (List Table vs Grid Cards)
+  function toggleLayoutView(mode) {
+    const tableWrapper = document.getElementById('table-view-wrapper');
+    const gridWrapper = document.getElementById('grid-view-wrapper');
+    const btnList = document.getElementById('btn-toggle-list');
+    const btnGrid = document.getElementById('btn-toggle-grid');
+
+    if (mode === 'grid') {
+      tableWrapper.classList.add('hidden');
+      gridWrapper.classList.remove('hidden');
+      btnGrid.classList.add('bg-surface-container-high', 'text-primary');
+      btnGrid.classList.remove('text-outline');
+      btnList.classList.remove('bg-surface-container-high', 'text-primary');
+      btnList.classList.add('text-outline');
+    } else {
+      gridWrapper.classList.add('hidden');
+      tableWrapper.classList.remove('hidden');
+      btnList.classList.add('bg-surface-container-high', 'text-primary');
+      btnList.classList.remove('text-outline');
+      btnGrid.classList.remove('bg-surface-container-high', 'text-primary');
+      btnGrid.classList.add('text-outline');
+    }
+  }
+
+  // Filter Accounts List in Real-Time
+  function filterAccountsList() {
+    const searchVal = document.getElementById('account-search-input').value.toLowerCase();
+    const typeFilter = document.getElementById('type-filter').value;
+    const sortFilter = document.getElementById('sort-filter').value;
+    
+    const rows = Array.from(document.querySelectorAll('#accounts-table-body .account-row'));
+
+    rows.forEach(row => {
+      const rowType = row.getAttribute('data-type');
+      const rowName = row.getAttribute('data-name').toLowerCase();
+      const textContent = row.textContent.toLowerCase();
+
+      const matchesSearch = textContent.includes(searchVal);
+      const matchesType = (typeFilter === 'all') || (rowType === typeFilter);
+
+      if (matchesSearch && matchesType) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    // Sorting
+    const tbody = document.getElementById('accounts-table-body');
+    const visibleRows = rows.filter(r => r.style.display !== 'none');
+
+    visibleRows.sort((a, b) => {
+      if (sortFilter === 'desc') {
+        return parseFloat(b.getAttribute('data-balance')) - parseFloat(a.getAttribute('data-balance'));
+      } else if (sortFilter === 'asc') {
+        return parseFloat(a.getAttribute('data-balance')) - parseFloat(b.getAttribute('data-balance'));
+      } else if (sortFilter === 'name') {
+        return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+      }
+      return 0;
+    });
+
+    visibleRows.forEach(r => tbody.appendChild(r));
+  }
+
+  // Add Account Modal Controller
+  function openAddAccountModal() {
+    const modal = document.getElementById('add-account-modal');
+    modal.classList.remove('hidden');
+  }
+
+  function closeAddAccountModal() {
+    const modal = document.getElementById('add-account-modal');
+    modal.classList.add('hidden');
+  }
+
+  // Handle Form Submission
+  function handleCreateAccount(e) {
+    e.preventDefault();
+    const name = document.getElementById('new-acc-name').value;
+    const type = document.getElementById('new-acc-type').value;
+    const rawBalance = document.getElementById('new-acc-balance').value || '0.00';
+    const numBalance = parseFloat(rawBalance).toLocaleString('en-IN', { minimumFractionDigits: 2 });
+
+    // Append to Table
+    const tbody = document.getElementById('accounts-table-body');
+    const newTr = document.createElement('tr');
+    newTr.className = 'account-row hover:bg-surface-container-high/60 transition-colors';
+    newTr.setAttribute('data-type', type);
+    newTr.setAttribute('data-name', name);
+    newTr.setAttribute('data-balance', rawBalance);
+
+    newTr.innerHTML = `
+      <td class="py-4 px-space-md">
+        <div class="flex items-center gap-space-sm">
+          <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[20px]">account_balance</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="font-body-md text-body-md text-on-surface font-medium truncate">${name}</span>
+              <span class="px-1.5 py-0.5 rounded text-label-xs font-label-xs bg-primary/10 text-primary font-medium">New Enclave</span>
+            </div>
+            <span class="font-label-xs text-label-xs text-outline truncate">Newly provisioned node</span>
+          </div>
+        </div>
+      </td>
+      <td class="py-4 px-space-md">
+        <span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">${type}</span>
+      </td>
+      <td class="py-4 px-space-md">
+        <div class="flex items-center gap-2">
+          <span class="font-label-sm text-label-sm text-on-surface">•••• ${Math.floor(1000 + Math.random() * 9000)}</span>
+          <button onclick="copyToClipboard('NEW-VAL-ID')" title="Copy" class="p-1 rounded text-outline hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">content_copy</span></button>
+        </div>
+      </td>
+      <td class="py-4 px-space-md text-right">
+        <span class="font-label-md text-label-md text-on-surface font-bold">₹${numBalance}</span>
+        <div class="font-label-xs text-label-xs text-secondary mt-0.5">Available Limit: 100%</div>
+      </td>
+      <td class="py-4 px-space-md">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-secondary/10 text-secondary font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          <span>Active Node</span>
+        </span>
+      </td>
+      <td class="py-4 px-space-md">
+        <div class="flex flex-col">
+          <span class="text-on-surface">Just Now</span>
+          <span class="font-label-xs text-label-xs text-outline">Created block #9422</span>
+        </div>
+      </td>
+      <td class="py-4 px-space-md text-center">
+        <button onclick="inspectAccountDrawer('${name}', '•••• ${Math.floor(1000 + Math.random() * 9000)}', '₹${numBalance}', '${type}', 'Custom Provisioned Node')" class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-[18px]">visibility</span>
+        </button>
+      </td>
+    `;
+    tbody.prepend(newTr);
+
+    closeAddAccountModal();
+    showQuickAlert(`Account "${name}" created with balance ₹${numBalance}`);
+    document.getElementById('create-account-form').reset();
+  }
+
+  // Account Inspection Drawer
+  function inspectAccountDrawer(title, id, balance, type, purpose) {
+    document.getElementById('drawer-acc-title').textContent = title;
+    document.getElementById('drawer-acc-id').textContent = id;
+    document.getElementById('drawer-acc-balance').textContent = balance;
+    document.getElementById('drawer-acc-badge').textContent = type;
+    document.getElementById('drawer-acc-purpose').textContent = purpose;
+
+    const drawer = document.getElementById('account-inspector-drawer');
+    drawer.classList.remove('translate-x-full');
+  }
+
+  function closeAccountDrawer() {
+    const drawer = document.getElementById('account-inspector-drawer');
+    drawer.classList.add('translate-x-full');
+  }
+
+  // Open Edit Account Modal with Pre-filled parameters
+  function openEditAccount(name, type, balance, desc) {
+    openAddAccountModal();
+    document.getElementById('new-acc-name').value = name;
+    document.getElementById('new-acc-type').value = type;
+    document.getElementById('new-acc-balance').value = balance;
+    document.getElementById('new-acc-desc').value = desc;
+  }
+
+  // Row Context Menu
+  function toggleRowMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    if (!menu) return;
+    const isHidden = menu.classList.contains('hidden');
+    document.querySelectorAll('[id^="menu-row-"]').forEach(m => m.classList.add('hidden'));
+    if (isHidden) {
+      menu.classList.remove('hidden');
+    }
+  }
+
+  // Copy Helper
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showQuickAlert(`Copied "${text}" to clipboard.`);
+    }).catch(() => {
+      showQuickAlert(`Identifier: ${text}`);
+    });
+  }
+
+  // Export Mock CSV
+  function downloadCSVReport() {
+    const csvContent = "data:text/csv;charset=utf-8,Account Name,Type,Identifier,Balance INR,Status\\nPrimary Account,Current,•••• 4092,84200.00,Active\\nSavings Account,Savings,•••• 8812,36150.00,Active\\nCash Wallet,Wallet,•••• 1044,4500.00,Active";
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "Ledgerly_Accounts_Statement_Oct2025.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showQuickAlert("Statement CSV exported successfully.");
+  }
+
+  // Floating Toast Alert
+  let toastTimer;
+  function showQuickAlert(message) {
+    const toast = document.getElementById('quick-toast');
+    const msgEl = document.getElementById('quick-toast-msg');
+    msgEl.textContent = message;
+    
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  // Dismiss dropdowns on background click
+  window.addEventListener('click', function(e) {
+    if (!e.target.closest('[onclick^="toggleRowMenu"]')) {
+      document.querySelectorAll('[id^="menu-row-"]').forEach(m => m.classList.add('hidden'));
+    }
+  });
+</script></main></div></body></html>
