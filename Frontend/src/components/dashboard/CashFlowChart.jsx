@@ -1,104 +1,84 @@
 import EmptyState from "./EmptyState.jsx";
 
-export default function CashFlowChart({ data, selectedRange, onRangeChange, unavailable }) {
-  const hasData = data.length > 0;
-  const ranges = ["7D", "30D", "90D", "All"];
+export default function CashFlowChart({ data, direction, unavailable }) {
+  const incoming = direction === "incoming";
+  const title = incoming ? "Incoming by transfer type" : "Expenditures by transfer type";
+  const categories = incoming ? data.incomingCategories : data.outgoingCategories;
+  const max = Math.max(1, ...categories.flatMap((row) => [row.current, row.previous]));
 
   return (
-    <section className="dashboard-card cashflow-card">
+    <section className="dashboard-card cashflow-card category-comparison-card">
       <div className="card-toolbar">
         <div>
           <div className="title-with-chip">
-            <h2>Cash Flow</h2>
-            <span>INR Ledger</span>
+            <h2>{title}</h2>
+            <span>By category</span>
           </div>
-          <p>Incoming vs outgoing external transfers</p>
+          <p>{data.currentLabel} (days 1–{data.currentCutoffDay}) vs {data.previousLabel} (days 1–{data.previousCutoffDay})</p>
         </div>
-        <div className="chart-legend">
-          <span><i className="income-dot" />Incoming</span>
-          <span><i className="expense-dot" />Outgoing</span>
-        </div>
-        <div className="mini-tabs">
-          {ranges.map((range) => (
-            <button
-              key={range}
-              className={selectedRange === range ? "active" : ""}
-              type="button"
-              onClick={() => onRangeChange(range)}
-            >
-              {range}
-            </button>
-          ))}
+        <div className="chart-legend category-comparison-legend" aria-label="Month legend">
+          <span><i className="month-current-dot" />This month</span>
+          <span><i className="month-previous-dot" />Previous month</span>
         </div>
       </div>
 
-      {hasData ? <LineChart data={data} /> : (
+      {categories.length ? (
+        <div className="category-comparison-list" role="list" aria-label={title}>
+          {categories.map((row) => (
+            <div className="category-comparison-row" key={row.category} role="listitem">
+              <span className="category-comparison-label">{row.category}</span>
+              <div
+                className="category-comparison-bars"
+                role="img"
+                aria-label={`${row.category}: this month ${formatAmount(row.current)}, previous month ${formatAmount(row.previous)}`}
+              >
+                <div className="category-comparison-bar-line">
+                  <div className="category-comparison-track">
+                    <span
+                      className="category-bar-fill month-current-bar"
+                      style={{ width: `${(row.current / max) * 100}%` }}
+                      title={`This month: ${formatAmount(row.current)}`}
+                    />
+                  </div>
+                  <span className="category-comparison-value">{formatAmount(row.current)}</span>
+                </div>
+                <div className="category-comparison-bar-line">
+                  <div className="category-comparison-track">
+                    <span
+                      className="category-bar-fill month-previous-bar"
+                      style={{ width: `${(row.previous / max) * 100}%` }}
+                      title={`Previous month: ${formatAmount(row.previous)}`}
+                    />
+                  </div>
+                  <span className="category-comparison-value">{formatAmount(row.previous)}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
         <EmptyState
+          compact
           icon="monitoring"
-          title={unavailable ? "Transfer history unavailable" : "No transfers in this period"}
-          message={unavailable ? "The transaction list could not be loaded from the backend." : "No dated external transfers were returned for this date range."}
+          title={unavailable ? "Transfer history unavailable" : `No ${incoming ? "incoming" : "expenditure"} categories to compare`}
+          message={unavailable
+            ? "The transaction list could not be loaded from the backend."
+            : "No completed external transfers were recorded in either comparison period."}
         />
       )}
 
       <div className="card-footnote">
-        <span>Internal transfers excluded</span>
-        <span>Latest 100 API records</span>
+        <span>Compare the two bars on each category row</span>
+        <span>Internal transfers excluded · Latest 100 records</span>
       </div>
     </section>
   );
 }
 
-function LineChart({ data }) {
-  const width = 760;
-  const height = 300;
-  const pad = { top: 24, right: 20, bottom: 32, left: 52 };
-  const max = Math.max(1, ...data.flatMap((item) => [item.income, item.expenses]));
-  const xStep = data.length > 1 ? (width - pad.left - pad.right) / (data.length - 1) : 0;
-  const y = (value) => pad.top + (height - pad.top - pad.bottom) * (1 - value / max);
-  const x = (index) => pad.left + index * xStep;
-  const incomePath = data.map((item, index) => `${index === 0 ? "M" : "L"} ${x(index)} ${y(item.income)}`).join(" ");
-  const expensePath = data.map((item, index) => `${index === 0 ? "M" : "L"} ${x(index)} ${y(item.expenses)}`).join(" ");
-  const fillPath = `${incomePath} L ${x(data.length - 1)} ${height - pad.bottom} L ${pad.left} ${height - pad.bottom} Z`;
-
-  return (
-    <div className="chart-frame">
-      <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Cash flow chart">
-        {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
-          const yy = y(max * tick);
-          return (
-            <g key={tick}>
-              <line className="grid-line" x1={pad.left} x2={width - pad.right} y1={yy} y2={yy} />
-              <text className="axis-label" x={12} y={yy + 4}>{formatCompact(max * tick)}</text>
-            </g>
-          );
-        })}
-        <path className="area-fill" d={fillPath} />
-        <path className="income-line" d={incomePath} />
-        <path className="expense-line" d={expensePath} />
-        {data.map((item, index) => (
-          <g key={`points-${item.key || item.label}`}>
-            <circle className="income-point" cx={x(index)} cy={y(item.income)} r="5">
-              <title>{`${item.label} incoming: ${formatAmount(item.income)}`}</title>
-            </circle>
-            <circle className="expense-point" cx={x(index)} cy={y(item.expenses)} r="5">
-              <title>{`${item.label} outgoing: ${formatAmount(item.expenses)}`}</title>
-            </circle>
-          </g>
-        ))}
-        {data.map((item, index) => (
-          <text key={item.key || item.label} className="x-label" x={x(index)} y={height - 8} textAnchor="middle">{item.label}</text>
-        ))}
-      </svg>
-    </div>
-  );
-}
-
 function formatAmount(value) {
-  return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR" }).format(Number(value) || 0);
-}
-
-function formatCompact(value) {
-  if (value >= 100000) return `₹${Math.round(value / 100000)}L`;
-  if (value >= 1000) return `₹${Math.round(value / 1000)}k`;
-  return `₹${Math.round(value)}`;
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(Number(value) || 0);
 }

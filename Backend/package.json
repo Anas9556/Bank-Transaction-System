@@ -7,7 +7,8 @@
     "test": "node --test",
     "dev": "npx nodemon server.js",
     "start": "node server.js",
-    "setup:system-user": "node scripts/seed-system-user.js"
+    "setup:system-user": "node scripts/seed-system-user.js",
+    "seed:monthly-demo": "node scripts/seed-monthly-demo-transactions.js"
   },
   "keywords": [],
   "author": "",

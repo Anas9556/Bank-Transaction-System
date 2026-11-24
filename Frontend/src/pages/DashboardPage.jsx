@@ -9,7 +9,7 @@ import WelcomeSection from "../components/dashboard/WelcomeSection.jsx";
 import { filterTransactionsByRange, formatCurrencyTotals, formatMoney, transactionDirection } from "../services/ledger.js";
 
 export default function DashboardPage() {
-  const { user, accounts, transactions, refresh, selectedRange, setSelectedRange } = useOutletContext();
+  const { user, accounts, transactions, refresh, selectedRange } = useOutletContext();
   const navigate = useNavigate();
   const visibleTransactions = useMemo(
     () => filterTransactionsByRange(transactions.data, selectedRange),
@@ -25,7 +25,10 @@ export default function DashboardPage() {
     }, { incoming: 0, outgoing: 0 });
     return totals;
   }, [visibleTransactions]);
-  const chartData = useMemo(() => buildCashFlow(visibleTransactions), [visibleTransactions]);
+  const chartData = useMemo(
+    () => buildMonthlyComparison(transactions.data),
+    [transactions.data]
+  );
 
   return (
     <main className="dashboard-content">
@@ -49,7 +52,6 @@ export default function DashboardPage() {
           label="Total balance"
           subtitle="Across your accounts"
           value={accounts.available ? formatCurrencyTotals(accounts.data) : "Unavailable"}
-          icon="account_balance_wallet"
           tone="positive"
           note={accounts.available ? `${accounts.data.length} account${accounts.data.length === 1 ? "" : "s"}` : "Account data unavailable"}
           unavailable={!accounts.available}
@@ -58,7 +60,6 @@ export default function DashboardPage() {
           label="Incoming transfers"
           subtitle={`In the last ${selectedRange}`}
           value={transactions.available ? formatMoney(metrics.incoming) : "Unavailable"}
-          icon="south_west"
           tone="positive"
           note="External credits only"
           unavailable={!transactions.available}
@@ -67,7 +68,6 @@ export default function DashboardPage() {
           label="Outgoing transfers"
           subtitle={`In the last ${selectedRange}`}
           value={transactions.available ? formatMoney(metrics.outgoing) : "Unavailable"}
-          icon="north_east"
           tone="negative"
           note="External debits only"
           unavailable={!transactions.available}
@@ -76,43 +76,47 @@ export default function DashboardPage() {
           label="Net movement"
           subtitle="Incoming less outgoing"
           value={transactions.available ? formatMoney(metrics.incoming - metrics.outgoing) : "Unavailable"}
-          icon="monitoring"
           tone={metrics.incoming - metrics.outgoing >= 0 ? "positive" : "negative"}
           note="Internal transfers excluded"
           unavailable={!transactions.available}
         />
       </section>
 
-      <section className="charts-grid">
+      <section className="charts-grid category-comparison-grid">
         <CashFlowChart
           data={chartData}
-          selectedRange={selectedRange}
-          onRangeChange={setSelectedRange}
+          direction="outgoing"
           unavailable={!transactions.available}
         />
-        <section className="dashboard-card expense-card">
-          <div className="card-title-row">
-            <div>
-              <h2>Transfer activity</h2>
-              <p>External ledger movement in this period</p>
-            </div>
+        <CashFlowChart
+          data={chartData}
+          direction="incoming"
+          unavailable={!transactions.available}
+        />
+      </section>
+
+      <section className="dashboard-card transfer-activity-card">
+        <div className="card-title-row">
+          <div>
+            <h2>Transfer activity</h2>
+            <p>External ledger movement in the last {selectedRange}</p>
           </div>
-          {transactions.available && visibleTransactions.length ? (
-            <div className="activity-summary">
-              <div><span>Incoming</span><strong className="amount-positive">{formatMoney(metrics.incoming)}</strong></div>
-              <div><span>Outgoing</span><strong className="amount-negative">{formatMoney(metrics.outgoing)}</strong></div>
-              <div><span>Internal transfers</span><strong>{visibleTransactions.filter((item) => transactionDirection(item) === "internal").length}</strong></div>
-            </div>
-          ) : (
-            <EmptyState
-              compact
-              icon="sync_alt"
-              title={transactions.available ? "No activity in this period" : "Transfer data unavailable"}
-              message={transactions.available ? "No transfers were recorded in the selected date range." : "The transaction feed could not be loaded."}
-            />
-          )}
-          <div className="card-footnote"><span>Based on the latest 100 records returned by the API</span></div>
-        </section>
+        </div>
+        {transactions.available && visibleTransactions.length ? (
+          <div className="activity-summary">
+            <div><span>Incoming</span><strong className="amount-positive">{formatMoney(metrics.incoming)}</strong></div>
+            <div><span>Outgoing</span><strong className="amount-negative">{formatMoney(metrics.outgoing)}</strong></div>
+            <div><span>Internal transfers</span><strong>{visibleTransactions.filter((item) => transactionDirection(item) === "internal").length}</strong></div>
+          </div>
+        ) : (
+          <EmptyState
+            compact
+            icon="sync_alt"
+            title={transactions.available ? "No activity in this period" : "Transfer data unavailable"}
+            message={transactions.available ? "No transfers were recorded in the selected date range." : "The transaction feed could not be loaded."}
+          />
+        )}
+        <div className="card-footnote"><span>Based on the latest 100 records returned by the API</span></div>
       </section>
 
       <section className="lower-grid">
@@ -136,18 +140,62 @@ export default function DashboardPage() {
   );
 }
 
-function buildCashFlow(transactions) {
-  const days = new Map();
+function buildMonthlyComparison(transactions) {
+  const today = new Date();
+  const currentStart = new Date(today.getFullYear(), today.getMonth(), 1);
+  const previousStart = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+  const previousMonthDays = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+  const previousCutoffDay = Math.min(today.getDate(), previousMonthDays);
+  const previousEnd = new Date(today.getFullYear(), today.getMonth() - 1, previousCutoffDay + 1);
+  const totals = {
+    current: { incoming: 0, outgoing: 0, incomingByCategory: {}, outgoingByCategory: {} },
+    previous: { incoming: 0, outgoing: 0, incomingByCategory: {}, outgoingByCategory: {} },
+  };
+
   for (const transaction of transactions) {
+    if (transaction.status !== "COMPLETED") continue;
     const direction = transactionDirection(transaction);
     if (direction !== "credit" && direction !== "debit") continue;
     const date = new Date(transaction.createdAt);
     if (Number.isNaN(date.getTime())) continue;
-    const key = date.toISOString().slice(0, 10);
-    const label = new Intl.DateTimeFormat("en-IN", { month: "short", day: "2-digit" }).format(date);
-    const row = days.get(key) || { key, label, income: 0, expenses: 0 };
-    row[direction === "credit" ? "income" : "expenses"] += Number(transaction.amount) || 0;
-    days.set(key, row);
+    const period = date >= currentStart && date <= today
+      ? "current"
+      : date >= previousStart && date < previousEnd
+        ? "previous"
+        : null;
+    if (!period) continue;
+    const type = direction === "credit" ? "incoming" : "outgoing";
+    const amount = Number(transaction.amount) || 0;
+    const category = transaction.category || "Uncategorized";
+    totals[period][type] += amount;
+    const categoryKey = `${type}ByCategory`;
+    totals[period][categoryKey][category] = (totals[period][categoryKey][category] || 0) + amount;
   }
-  return Array.from(days.values()).sort((a, b) => a.key.localeCompare(b.key)).slice(-8);
+
+  const monthLabel = (year, month) => new Intl.DateTimeFormat("en-IN", {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(year, month, 1));
+
+  return {
+    ...totals,
+    incomingCategories: buildCategoryRows(totals, "incoming"),
+    outgoingCategories: buildCategoryRows(totals, "outgoing"),
+    currentLabel: monthLabel(today.getFullYear(), today.getMonth()),
+    previousLabel: monthLabel(today.getFullYear(), today.getMonth() - 1),
+    currentCutoffDay: today.getDate(),
+    previousCutoffDay,
+  };
+}
+
+function buildCategoryRows(totals, type) {
+  const current = totals.current[`${type}ByCategory`];
+  const previous = totals.previous[`${type}ByCategory`];
+  return [...new Set([...Object.keys(current), ...Object.keys(previous)])]
+    .map((category) => ({
+      category,
+      current: current[category] || 0,
+      previous: previous[category] || 0,
+    }))
+    .sort((left, right) => right.current + right.previous - left.current - left.previous);
 }

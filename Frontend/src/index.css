@@ -1277,7 +1277,6 @@ a {
 }
 
 .dash-brand-main span,
-.core-chip,
 .nav-section-label {
   font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
   text-transform: uppercase;
@@ -1289,14 +1288,6 @@ a {
   color: #43d6b6;
   font-size: 11px;
   line-height: 16px;
-}
-
-.core-chip {
-  color: #cbd2e5;
-  background: #252c40;
-  border-radius: 2px;
-  padding: 4px 7px;
-  font-size: 10px;
 }
 
 .dash-nav {
@@ -1865,7 +1856,6 @@ a {
 .summary-top {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 14px;
 }
 
@@ -1897,27 +1887,6 @@ a {
   color: #e0e5f4;
   font-size: 14px;
   line-height: 19px;
-}
-
-.summary-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  background: #252c40;
-  display: grid;
-  place-items: center;
-}
-
-.summary-card.positive .summary-icon {
-  color: #43d6b6;
-}
-
-.summary-card.negative .summary-icon {
-  color: #f09aa6;
-}
-
-.summary-icon .material-symbols-outlined {
-  font-size: 22px;
 }
 
 .summary-value-row strong {

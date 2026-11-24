@@ -44,7 +44,6 @@ export default function DashboardLayout({ children, user, selectedRange, onRange
                 <span>Financial ledger</span>
               </div>
             </div>
-            <span className="core-chip">Core</span>
           </div>
 
           <nav className="dash-nav">

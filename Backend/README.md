@@ -111,6 +111,56 @@ npm run setup:system-user
 This command is safe to rerun: it creates the system user and account only if
 they do not already exist. It does not reset an existing user's password.
 
+## Seed monthly dashboard demo history
+
+`npm run seed:monthly-demo` adds 84 synthetic completed transfers (42 each in
+October and November 2026). On a test/e2e/demo database it uses two existing
+active accounts owned by non-system users with `.test` email domains; it does
+not create users or accounts there. It refuses other database names by default.
+Transfers are stored with their matching debit and credit ledger entries in
+MongoDB transactions. Each transfer pair reverses the same amount the next
+morning, so monthly activity does not change either demo account's final
+balance.
+
+The seed is repeatable: it uses a fixed idempotency-key namespace and verifies
+existing entries and their ledger rows instead of inserting duplicates. It
+checks transaction dates, ledger references, duplicate keys, and final account
+balances before reporting success. The two account owners' latest-100 API feeds
+must have enough room to show all seeded rows.
+
+Use the documented synthetic website database (or another dedicated test/demo
+database) in `Backend/.env`, then run from `Backend/`:
+
+```powershell
+$env:DATABASE_NAME = "bank_transaction_system_e2e_20261105"
+npm run seed:monthly-demo
+```
+
+If you explicitly opt in to `BackendLedger`, the script creates two clearly
+named synthetic `.test` users and accounts if they do not already exist. It
+prints newly generated passwords once; save them for signing in to the demo
+users. If both demo accounts are empty, it records a ₹500 opening credit to the
+sender through the system account using the same completed-transaction and
+ledger-entry pattern as the initial-funds flow. The account pair then finishes
+with the same balances they had before the October/November transfers.
+
+Use this explicit main-database opt-in only when you intend to create these
+synthetic demo records in `BackendLedger`:
+
+```powershell
+$env:ALLOW_MAIN_DATABASE_DEMO_SEED = "yes"
+npm run seed:monthly-demo
+Remove-Item Env:ALLOW_MAIN_DATABASE_DEMO_SEED
+```
+
+The main-database opt-in does not select or write to other users' accounts.
+
+The selected accounts must use INR, be active, and have enough existing balance
+for the first transfer in each pair. The script will not adjust balances to
+make the seed run. October and November entries are spread over the first 22
+days of each month so they fit the report's same-day-of-month comparison and
+remain within the API's latest-100 record limit.
+
 ## Running the App
 
 Start the development server:
