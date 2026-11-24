@@ -1,207 +1,53 @@
-# Bank Transaction System
+# Bank Transaction System backend
 
-A simple backend banking application built with Node.js, Express, and MongoDB. The project supports user authentication, account creation, and transaction processing for a basic ledger-style banking workflow.
+Express 5 and Mongoose API for the Ledgerly web application. It provides authentication, user-owned accounts, account-to-account transfers, a double-entry-style ledger, and a restricted system-user initial-funds flow.
 
-## Features
+## Requirements
 
-- User registration and login
-- JWT-based authentication
-- Cookie-based token storage
-- Account creation tied to users
-- Transaction endpoint integration
-- MongoDB database connection
-- Email service support for registration notifications
+- Node.js and npm.
+- MongoDB on a replica set or MongoDB Atlas. Transfer and initial-funds writes run in MongoDB transactions.
+- Gmail OAuth credentials only when email notifications are needed.
 
-## Tech Stack
+## Install and configure
 
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT for authentication
-- bcryptjs for password hashing
-- Nodemailer for email sending
-- dotenv for environment configuration
+Run these commands from `Backend/`:
 
-## Project Structure
-
-```bash
-.
-├── src/
-│   ├── app.js
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── account.controller.js
-│   │   ├── auth.controller.js
-│   │   └── transaction.controller.js
-│   ├── middleware/
-│   │   └── auth.middleware.js
-│   ├── models/
-│   │   ├── account.model.js
-│   │   ├── ledger.model.js
-│   │   ├── transaction.model.js
-│   │   └── user.model.js
-│   ├── routes/
-│   │   ├── account.routes.js
-│   │   ├── auth.routes.js
-│   │   └── transaction.routes.js
-│   └── services/
-│       └── email.service.js
-├── .env.example
-├── .gitignore
-├── package.json
-├── server.js
-└── README.md
-```
-
-## Prerequisites
-
-Before running the project, make sure you have:
-
-- Node.js installed
-- MongoDB running or access to a MongoDB Atlas cluster
-- A Gmail or SMTP email account for email notifications
-
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Anas9556/Bank-Transaction-System.git
-cd Bank-Transaction-System
-```
-
-2. Install dependencies:
-
-```bash
+```powershell
 npm install
+Copy-Item .env.example .env
 ```
 
-3. Create a `.env` file in the project root using `.env.example` as a template:
+Set `MONGO_URI`, `DATABASE_NAME`, `JWT_SECRET`, and `PORT` in `.env`. The example sets `PORT=3000`; if it is omitted, the server defaults to port `3123`. Gmail OAuth variables (`CLIENT_ID`, `CLIENT_SECRET`, `REFRESH_TOKEN`, and `EMAIL_USER`) are used by the email service. Set `NODE_ENV=test` to disable email sending and the startup mail connection check.
 
-```bash
-cp .env.example .env
-```
-
-4. Update the environment variables inside `.env` with your credentials:
-
-```env
-PORT=3000
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>
-DATABASE_NAME=your_database_name
-JWT_SECRET=your_jwt_secret_here
-CLIENT_ID=your_google_oauth_client_id
-CLIENT_SECRET=your_google_oauth_client_secret
-REFRESH_TOKEN=your_google_oauth_refresh_token
-EMAIL_USER=your_email@example.com
-SYSTEM_USER_NAME=System User
-SYSTEM_USER_EMAIL=system@example.com
-SYSTEM_USER_PASSWORD=replace_with_a_secure_password
-```
-
-Set the system-user values to private credentials before provisioning. Do not
-use the system-user email or password for a regular account.
-
-5. Create the system user and its account:
-
-```bash
-npm run setup:system-user
-```
-
-This command is safe to rerun: it creates the system user and account only if
-they do not already exist. It does not reset an existing user's password.
-
-## Seed monthly dashboard demo history
-
-`npm run seed:monthly-demo` adds 84 synthetic completed transfers (42 each in
-October and November 2026). On a test/e2e/demo database it uses two existing
-active accounts owned by non-system users with `.test` email domains; it does
-not create users or accounts there. It refuses other database names by default.
-Transfers are stored with their matching debit and credit ledger entries in
-MongoDB transactions. Each transfer pair reverses the same amount the next
-morning, so monthly activity does not change either demo account's final
-balance.
-
-The seed is repeatable: it uses a fixed idempotency-key namespace and verifies
-existing entries and their ledger rows instead of inserting duplicates. It
-checks transaction dates, ledger references, duplicate keys, and final account
-balances before reporting success. The two account owners' latest-100 API feeds
-must have enough room to show all seeded rows.
-
-Use the documented synthetic website database (or another dedicated test/demo
-database) in `Backend/.env`, then run from `Backend/`:
+## Start the API
 
 ```powershell
-$env:DATABASE_NAME = "bank_transaction_system_e2e_20261105"
-npm run seed:monthly-demo
-```
-
-If you explicitly opt in to `BackendLedger`, the script creates two clearly
-named synthetic `.test` users and accounts if they do not already exist. It
-prints newly generated passwords once; save them for signing in to the demo
-users. If both demo accounts are empty, it records a ₹500 opening credit to the
-sender through the system account using the same completed-transaction and
-ledger-entry pattern as the initial-funds flow. The account pair then finishes
-with the same balances they had before the October/November transfers.
-
-Use this explicit main-database opt-in only when you intend to create these
-synthetic demo records in `BackendLedger`:
-
-```powershell
-$env:ALLOW_MAIN_DATABASE_DEMO_SEED = "yes"
-npm run seed:monthly-demo
-Remove-Item Env:ALLOW_MAIN_DATABASE_DEMO_SEED
-```
-
-The main-database opt-in does not select or write to other users' accounts.
-
-The selected accounts must use INR, be active, and have enough existing balance
-for the first transfer in each pair. The script will not adjust balances to
-make the seed run. October and November entries are spread over the first 22
-days of each month so they fit the report's same-day-of-month comparison and
-remain within the API's latest-100 record limit.
-
-## Running the App
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Or run the server directly:
+`npm run dev` starts the Express server with nodemon. Use `npm start` to start it without nodemon. The API is mounted under `/api`; see [`docs/API.md`](docs/API.md) for routes and examples.
 
-```bash
-npm start
+## System-user funding
+
+The `/api/transactions/system/initial-funds` endpoint is restricted to a provisioned system user. Set `SYSTEM_USER_NAME`, `SYSTEM_USER_EMAIL`, and `SYSTEM_USER_PASSWORD` in `.env`, then run:
+
+```powershell
+npm run setup:system-user
 ```
 
-The API will run on the port defined in `.env` or default to `3123`.
+This creates the configured system user and its account if missing. It does not reset the password of an existing system user. The endpoint transfers funds from that account to an existing active recipient account identified by its MongoDB ID.
 
 ## Tests
 
-For the retained live website test database and synthetic account walkthrough,
-see [the website test database guide](./docs/TEST_DATABASE_GUIDE.md).
+Run the HTTP tests without a database with:
 
-Run the backend HTTP tests with:
-
-```bash
+```powershell
 npm test
 ```
 
-The HTTP test runs without a database and verifies authentication guards and
-API error responses. Database tests are skipped unless `TEST_MONGO_URI` is
-set. They use a fresh database named
-`bank_transaction_test_<process-id>_<random-suffix>` and drop only that
-database after each test. The supplied URI must have permission to create and
-drop databases. Use a disposable test MongoDB deployment; the suite never
-falls back to `MONGO_URI`. Email delivery is stubbed in integration tests.
+Set `TEST_MONGO_URI` to run the database integration tests. The suite creates a temporary database named `bank_transaction_test_<process-id>_<random-suffix>` and drops that database after the tests. Use a disposable MongoDB deployment; the connection must be allowed to create and drop databases and must support transactions for the transfer/ledger tests. The suite does not fall back to `MONGO_URI`.
 
-Registration, login, password hashing, and account isolation tests work with a
-standalone MongoDB server. The funding, transfer, idempotency, and ledger
-balance tests require a replica set or sharded cluster because MongoDB
-transactions are used; they are skipped automatically on standalone servers.
-
-In PowerShell, set the test connection only for the test process:
+PowerShell example:
 
 ```powershell
 $env:TEST_MONGO_URI = "mongodb://localhost:27017/?replicaSet=rs0"
@@ -209,55 +55,50 @@ npm test
 Remove-Item Env:TEST_MONGO_URI
 ```
 
-## API Endpoints
+For the isolated website walkthrough database and its synthetic accounts, follow [`docs/TEST_DATABASE_GUIDE.md`](docs/TEST_DATABASE_GUIDE.md).
 
-### Authentication
+## Monthly dashboard demo seed
 
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Log in an existing user
+`npm run seed:monthly-demo` creates 84 synthetic completed transfers across October and November 2026. On a test/e2e/demo database, it uses two existing active INR accounts belonging to non-system users with `.test` email addresses; it does not create accounts there. It uses fixed idempotency keys, verifies existing seed entries and ledger rows, and checks the accounts' balances and latest-100 transaction feeds. The accounts need enough existing balance for the planned transfers; the script will not top them up.
 
-### Accounts
+The script refuses database names that are not recognized as test, e2e, or demo by default. Use a dedicated test database by setting `DATABASE_NAME` in the same PowerShell session before running it:
 
-- `POST /api/accounts` - Create an account for the authenticated user
+```powershell
+$env:DATABASE_NAME = "bank_transaction_system_e2e_20261105"
+npm run seed:monthly-demo
+```
 
-### Transactions
+An explicit opt-in allows adding the reserved synthetic monthly-demo users, accounts, and seed transactions to `BackendLedger`. It requires an active INR system account. If both demo accounts are empty and have no transaction history, the script records a one-time INR 500 opening credit from that system account; it will not adjust partial balances. Newly created demo users have generated passwords printed once. Use this only when you intend to add demo data to `BackendLedger`:
 
-- `POST /api/transactions` - Create a new transaction for an authenticated user
-- `POST /api/transactions/system/initial-funds` - Create an initial-funds
-  transaction using the provisioned system user's account
+```powershell
+$env:ALLOW_MAIN_DATABASE_DEMO_SEED = "yes"
+npm run seed:monthly-demo
+Remove-Item Env:ALLOW_MAIN_DATABASE_DEMO_SEED
+```
 
-Both transaction endpoints require a JSON `amount` greater than zero and a
-unique `idempotencyKey`. Regular transactions also require `fromAccount`; the
-sender account must belong to the authenticated user. Initial-funds requests
-require a system-user token and `toAccount`.
+Read the seed script's output carefully and use the explicit opt-in only for the intended database. Aside from the optional opening credit, seed transfers run between the two reserved demo accounts.
 
-For request and response examples, authentication instructions, and
-PowerShell commands, see the [API guide](./docs/API.md).
+## Project layout
 
-## Example Environment Setup
+```text
+src/
+  app.js
+  config/db.js
+  controllers/
+  middlewares/
+  models/
+  routes/
+  services/email.service.js
+scripts/
+  seed-system-user.js
+  seed-monthly-demo-transactions.js
+docs/
+  API.md
+  TEST_DATABASE_GUIDE.md
+test/api.test.js
+.env.example
+package.json
+server.js
+```
 
-This project expects the following variables to be available:
-
-- `PORT`
-- `MONGO_URI`
-- `DATABASE_NAME`
-- `JWT_SECRET`
-- `CLIENT_ID`
-- `CLIENT_SECRET`
-- `REFRESH_TOKEN`
-- `EMAIL_USER`
-- `SYSTEM_USER_NAME`
-- `SYSTEM_USER_EMAIL`
-- `SYSTEM_USER_PASSWORD`
-
-## Notes
-
-- Keep your real `.env` file local and do not commit it to Git.
-- This project is a backend-focused application and is intended for learning and extension.
-- Transfers are recorded as a debit and credit in a MongoDB transaction. The
-  MongoDB deployment must support transactions (for example, a replica set or
-  MongoDB Atlas).
-
-## License
-
-This project is licensed under the ISC License.
+The project-level guide is [`../README.md`](../README.md). The React client has a separate guide at [`../Frontend/README.md`](../Frontend/README.md).

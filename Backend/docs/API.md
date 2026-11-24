@@ -127,7 +127,7 @@ Requires the authenticated user's token. Returns up to the latest 100
 transactions involving one or more of the user's accounts, ordered newest
 first. Each record includes its transaction and account IDs, amount, status,
 idempotency key, direction (`credit`, `debit`, or `internal`), account name,
-description, category label, and timestamps. There is no pagination or
+description, category, note, and timestamps. There is no pagination or
 individual-transaction endpoint.
 
 ### Create a transfer
@@ -144,21 +144,28 @@ Request:
   "fromAccount": "SENDER_ACCOUNT_ID",
   "toAccount": "RECIPIENT_ACCOUNT_ID",
   "amount": 250,
+  "category": "Bills",
+  "note": "Monthly utility payment",
   "idempotencyKey": "unique-client-generated-key"
 }
 ```
 
-`amount` must be a JSON number greater than zero. The idempotency key must be
-a non-empty string and must be unique for a new transaction. Retrying the
-same request with the same key and same account IDs/amount returns the
-existing transaction instead of transferring again. Do not reuse a key for a
-different request.
+`amount` must be a JSON number of at least `1`. The idempotency key must be a
+non-empty string and unique for a new transaction. A transfer may include a
+category (`Food`, `Transport`, `Shopping`, `Bills`, `Health`, `Entertainment`,
+`Education`, `Transfer`, or `Other`) and a note of up to 120 characters. The
+category defaults to `Transfer`; the note defaults to an empty string.
 
-Successful new transfers return `201 Created`; a matching retry returns
-`200 OK`. Other possible responses include `400 Bad Request` for invalid
+A retry with the same key and matching account IDs and amount returns the
+existing transaction instead of transferring again. It does not update the
+original category or note. Do not reuse a key for a different request.
+
+Successful new transfers return `201 Created`. A matching retry returns
+`200 OK` when the transaction is complete or `202 Accepted` while it is
+pending. Other possible responses include `400 Bad Request` for invalid
 fields, inactive accounts, or insufficient balance; `404 Not Found` if an
 account is unavailable to the caller; and `409 Conflict` if a key was reused
-for a different request or the existing transaction is not complete.
+for a different request or the existing transaction has another status.
 
 ### Add initial funds
 
@@ -178,9 +185,10 @@ Request:
 }
 ```
 
-`amount` must be a JSON number greater than zero. The system user and its
+`amount` must be a JSON number of at least `1`. The system user and its
 account must already be provisioned. New transactions return `201 Created`;
-a matching retry returns `200 OK`. Other possible responses include `400`
+a matching retry returns `200 OK` when complete or `202 Accepted` while
+pending. Other possible responses include `400`
 for invalid fields or inactive accounts, `401` for missing/invalid
 authentication, `403` if the token belongs to a non-system user, `404` if the
 recipient or system account is missing, and `409` for a conflicting reused
